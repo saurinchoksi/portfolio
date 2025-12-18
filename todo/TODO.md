@@ -8,6 +8,10 @@ The following items need manual attention (added Dec 2025 after technical audit)
 - [x] **Replace domain placeholders** - Updated to `saurinchoksi.com` in: `robots.txt`, `sitemap.xml`, and Open Graph tags in all HTML files
 - [x] **Create og-image.jpg** - Created from hero image at 1200x630px, 146KB
 
+### Mobile Issues (iPhone 16 Portrait)
+- [x] **Tech stack font sizing** - Fixed: Reduced font to 0.55rem with tighter separator margins (0.3rem → 0.25rem at 480px) and added line-height: 1.8 for better two-row display.
+- [x] **"5 Steps → 1" wrapping** - Fixed: Added `white-space: nowrap` to `.project-stat` at mobile breakpoints and increased font to 2.5rem (2.25rem at 480px) to maximize size while keeping on one line.
+
 ### Optional (Post-Deploy)
 - [x] **Fix color contrast** - Gold hover states have 2.39:1 contrast ratio. Accepted as-is since hover is transient and default maroon links pass WCAG AA.
 - [x] **Enable HSTS** - Added `_headers` file with Strict-Transport-Security header
