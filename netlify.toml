@@ -60,3 +60,21 @@
   from = "/portfolio"
   to = "/case-studies/sequence-expert.html"
   status = 301
+
+# Block internal files (privacy)
+[[redirects]]
+  from = "/CLAUDE.md"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.gitignore"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/todo/*"
+  status = 404
+  force = true
+
+
