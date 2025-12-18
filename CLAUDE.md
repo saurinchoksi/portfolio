@@ -150,3 +150,17 @@ Portfolio focuses on:
 - `assets/saurin-choksi-style-guide.md` - Complete design specifications including exact font sizes, weights, spacing
 - `AI_PROTOCOLS.md` - Design handoff protocol for maintaining system consistency
 - `README.md` - Deployment instructions and setup guide
+
+## Remaining TODOs
+
+The following items need manual attention (added Dec 2025 after technical audit):
+
+### Critical (Before Deploy)
+- [ ] **Optimize hero image** - `assets/images/choksi-home.webp` is 6.9MB, compress to <200KB using ImageOptim, Squoosh, or TinyPNG
+- [ ] **Optimize logo images** - 8 logos in `assets/images/logos/` total ~800KB, compress to <10KB each
+- [ ] **Replace domain placeholders** - Update "yourdomain.com" to actual domain in: `robots.txt`, `sitemap.xml`, and Open Graph tags in all HTML files
+- [ ] **Create og-image.jpg** - Social sharing image at `assets/images/og-image.jpg` (1200x630px, <200KB)
+
+### Optional (Post-Deploy)
+- [ ] **Fix color contrast** - Gold hover states have 2.39:1 contrast ratio (WCAG AA requires 4.5:1). Options: add underline on hover, or use `var(--gold-dark)` instead
+- [ ] **Enable HSTS** - Configure in Netlify dashboard after deployment for additional security
