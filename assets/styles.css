@@ -58,6 +58,10 @@
     box-sizing: border-box;
 }
 
+.no-wrap {
+    white-space: nowrap;
+}
+
 body {
     font-family: 'DM Sans', sans-serif;
     background-color: var(--cream);
@@ -1009,6 +1013,13 @@ p strong {
     gap: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 .impact-card {
     background: white;
     border-radius: 8px;
@@ -1501,7 +1512,7 @@ footer a {
     }
 
     .tech-stack {
-        font-size: 0.55rem;
+        font-size: 0.65rem;
     }
 
     .logo-bar {
@@ -1518,7 +1529,7 @@ footer a {
     }
 
     .project-stat {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .project-card {
@@ -1590,6 +1601,6 @@ footer a {
     }
 
     .project-stat {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
