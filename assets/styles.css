@@ -5,9 +5,11 @@
     /* Brand Colors */
     --maroon: #6A3843;
     --gold: #BFA265;
+    --gold-dark: #a88d55;
     --dusty-rose: #F0E4E6;
     --cream: #FDFCFA;
     --warm-white: #F5F3EF;
+    --pure-white: #ffffff;
 
     /* Text Colors */
     --text-dark: #3D3335;
@@ -19,9 +21,11 @@
     --charcoal-start: #3D3335;
     --charcoal-end: #4a3f42;
 
-    /* Shadows */
+    /* Shadows & Borders */
     --card-shadow: 0 4px 24px rgba(106, 56, 67, 0.08);
     --card-border: rgba(106, 56, 67, 0.08);
+    --border-light: #dddddd;
+    --border-lighter: #d4d4d4;
 
     /* Typography Tokens */
     --font-size-display: 3rem;
@@ -70,6 +74,40 @@ body {
 a {
     transition: opacity 0.2s ease, color 0.2s ease;
     text-decoration: none;
+}
+
+/* Focus Indicators for Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* Remove default outline for mouse users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Skip Link for Keyboard Navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--maroon);
+    color: var(--warm-white);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    z-index: 100;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 
@@ -390,7 +428,7 @@ p strong {
 }
 
 .project-card .btn:hover {
-    background: #a8903d;
+    background: var(--gold-dark);
 }
 
 /* ============================================
@@ -446,12 +484,12 @@ p strong {
     text-align: center;
     color: var(--text-read);
     margin-bottom: 1rem;
-    font-size: var(--font-size-read);
+    font-size: var(--font-size-body);
 }
 
 .meta {
     font-size: 0.95rem;
-    color: var(--text-grey);
+    color: var(--text-light);
 }
 
 .meta strong {
@@ -535,8 +573,8 @@ p strong {
 }
 
 .step-box {
-    background: white;
-    border: 1px solid #ddd;
+    background: var(--pure-white);
+    border: 1px solid var(--border-light);
     border-radius: 4px;
     padding: 0.5rem 0.75rem;
     font-size: 0.85rem;
@@ -1165,7 +1203,7 @@ p strong {
     top: 10%;
     bottom: 10%;
     width: 1px;
-    background: #d4d4d4;
+    background: var(--border-lighter);
 }
 
 .icon-svg {
@@ -1342,7 +1380,7 @@ p strong {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    background-color: #ffffff;
+    background-color: var(--pure-white);
     border: 1px solid rgba(106, 56, 67, 0.2);
     border-radius: 4px;
     font-family: 'DM Sans', sans-serif;
@@ -1372,7 +1410,7 @@ p strong {
 }
 
 .submit-btn:hover {
-    background-color: #a88d55;
+    background-color: var(--gold-dark);
 }
 
 /* Mobile Responsive for Contact Page */
