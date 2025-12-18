@@ -148,8 +148,6 @@ Portfolio focuses on:
 ## Reference Files
 
 - `assets/saurin-choksi-style-guide.md` - Complete design specifications including exact font sizes, weights, spacing
-- `AI_PROTOCOLS.md` - Design handoff protocol for maintaining system consistency
-- `README.md` - Deployment instructions and setup guide
 
 ## Remaining TODOs
 
