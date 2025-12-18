@@ -1,0 +1,7 @@
+exclude:
+  - CLAUDE.md
+  - .gitignore
+  - todo
+  - README.md
+  - AI_PROTOCOLS.md
+  - netlify.toml
