@@ -81,7 +81,7 @@ header {
     background-color: var(--maroon);
     color: var(--warm-white);
     padding: 1rem 2rem;
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-body);
     font-weight: 500;
     display: flex;
     justify-content: space-between;
@@ -91,7 +91,7 @@ header {
 header .site-title {
     font-family: 'Fraunces', serif;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
     letter-spacing: 0.02em;
 }
 
@@ -253,7 +253,7 @@ p strong {
 }
 
 .home-hero .hero-body {
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     color: var(--text-read);
     margin-bottom: 2.5rem;
     max-width: 600px;
