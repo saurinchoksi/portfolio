@@ -1271,6 +1271,7 @@ p strong {
 .resume-download {
     padding-top: 1.5rem;
     border-top: 1px solid var(--dusty-rose);
+    display: none;
 }
 
 .resume-link {
