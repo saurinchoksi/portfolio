@@ -1534,7 +1534,7 @@ footer a {
     }
 
     .project-card .project-stat {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
         white-space: nowrap;
     }
 
@@ -1607,7 +1607,7 @@ footer a {
     }
 
     .project-card .project-stat {
-        font-size: 2.25rem;
+        font-size: 2rem;
         white-space: nowrap;
     }
 }
