@@ -15,3 +15,19 @@ The following items need manual attention (added Dec 2025 after technical audit)
 ### Optional (Post-Deploy)
 - [x] **Fix color contrast** - Gold hover states have 2.39:1 contrast ratio. Accepted as-is since hover is transient and default maroon links pass WCAG AA.
 - [x] **Enable HSTS** - Added `_headers` file with Strict-Transport-Security header
+
+---
+
+## Sequence Expert Demo Enhancement
+
+Replace the static mockup in `case-studies/sequence-expert.html` (lines 175-198) with a working demo.
+
+### Phase 1: Video Recording (Quick Win)
+- [ ] Record 10-15 second screen capture of actual Sequence Expert tool
+- [ ] Show: dropdown cascade → Play All → audio plays
+- [ ] Export as MP4/WebM, keep under 2MB
+- [ ] Embed with `<video controls muted>` and "Click to play with audio" prompt
+
+### Phase 2: Interactive Demo (Future)
+- [ ] Build embedded interactive demo with sample data
+- [ ] See full spec: [`todo/sequence-expert-demo-spec.md`](sequence-expert-demo-spec.md)
