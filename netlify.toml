@@ -37,23 +37,24 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Cache static assets aggressively (1 year)
+# Cache static assets (Relaxed for dev)
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Cache images
 [[headers]]
   for = "/assets/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Cache CSS
 [[headers]]
   for = "/assets/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 
 # Optional: Redirect /portfolio to case study
 [[redirects]]
