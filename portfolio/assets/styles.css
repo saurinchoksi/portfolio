@@ -47,6 +47,22 @@
 
     /* UI Inputs */
     --text-button: #1A1A1A;
+
+    /* Demo UI (dark mockup interface) */
+    --demo-bg: #2a2a2a;
+    --demo-bg-dark: #333;
+    --demo-bg-panel: #444;
+    --demo-text: #aaa;
+    --demo-text-muted: #888;
+    --demo-text-secondary: #999;
+    --demo-accent: #5a7a9a;
+    --demo-waveform: #5a9a7a;
+
+    /* Code Syntax Highlighting */
+    --code-keyword: #f9d849;
+    --code-const: #7ec8e3;
+    --code-string: #a8d4a8;
+    --code-function: #d4a8d4;
 }
 
 /* ============================================
@@ -707,12 +723,12 @@ p strong {
 }
 
 .demo-gif-placeholder {
-    background: #2a2a2a;
+    background: var(--demo-bg);
     border-radius: 6px;
     padding: 1rem;
     font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
     font-size: 0.75rem;
-    color: #aaa;
+    color: var(--demo-text);
 }
 
 .demo-gif-header {
@@ -721,7 +737,7 @@ p strong {
     gap: 0.5rem;
     margin-bottom: 0.75rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--demo-bg-panel);
 }
 
 .demo-gif-dot {
@@ -743,7 +759,7 @@ p strong {
 }
 
 .demo-gif-title {
-    color: #888;
+    color: var(--demo-text-muted);
     font-size: 0.7rem;
     margin-left: 0.5rem;
 }
@@ -755,28 +771,28 @@ p strong {
 
 .demo-gif-sidebar {
     width: 120px;
-    background: #333;
+    background: var(--demo-bg-dark);
     border-radius: 3px;
     padding: 0.5rem;
 }
 
 .demo-gif-item {
-    background: #444;
+    background: var(--demo-bg-panel);
     border-radius: 2px;
     padding: 0.35rem 0.5rem;
     margin-bottom: 0.35rem;
     font-size: 0.65rem;
-    color: #999;
+    color: var(--demo-text-secondary);
 }
 
 .demo-gif-item--selected {
-    background: #5a7a9a;
-    color: #fff;
+    background: var(--demo-accent);
+    color: var(--pure-white);
 }
 
 .demo-gif-main {
     flex: 1;
-    background: #333;
+    background: var(--demo-bg-dark);
     border-radius: 3px;
     padding: 0.75rem;
     display: flex;
@@ -787,18 +803,18 @@ p strong {
 .demo-gif-waveform {
     height: 40px;
     background: linear-gradient(90deg,
-            transparent 0%, #5a9a7a 10%, #5a9a7a 15%,
-            transparent 20%, #5a9a7a 25%, #5a9a7a 35%,
-            transparent 40%, #5a9a7a 50%, transparent 60%,
-            #5a9a7a 70%, #5a9a7a 80%, transparent 85%,
-            #5a9a7a 90%, transparent 100%);
+            transparent 0%, var(--demo-waveform) 10%, var(--demo-waveform) 15%,
+            transparent 20%, var(--demo-waveform) 25%, var(--demo-waveform) 35%,
+            transparent 40%, var(--demo-waveform) 50%, transparent 60%,
+            var(--demo-waveform) 70%, var(--demo-waveform) 80%, transparent 85%,
+            var(--demo-waveform) 90%, transparent 100%);
     border-radius: 2px;
     opacity: 0.7;
 }
 
 .demo-gif-button {
     align-self: flex-start;
-    background: #5a7a9a;
+    background: var(--demo-accent);
     color: var(--text-button);
     border: none;
     border-radius: 3px;
@@ -959,19 +975,19 @@ p strong {
 }
 
 .code-keyword {
-    color: #f9d849;
+    color: var(--code-keyword);
 }
 
 .code-const {
-    color: #7ec8e3;
+    color: var(--code-const);
 }
 
 .code-string {
-    color: #a8d4a8;
+    color: var(--code-string);
 }
 
 .code-function {
-    color: #d4a8d4;
+    color: var(--code-function);
 }
 
 .code-note {
