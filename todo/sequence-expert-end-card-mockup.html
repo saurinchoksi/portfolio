@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Expert — End Card Mockup</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #6A3843;
+            --gold: #BFA265;
+            --dusty-rose: #F0E4E6;
+            --cream: #FDFCFA;
+            --warm-white: #F5F3EF;
+            --text-dark: #3D3335;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 2rem;
+            background: #333;
+        }
+
+        h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        /* ============================
+           END CARD OPTIONS
+           ============================ */
+
+        .end-card {
+            width: 640px;
+            height: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+        }
+
+        .name {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+        }
+
+        .role {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+        }
+
+        /* Option A: Maroon background (matches header/footer) */
+        .option-a {
+            background: var(--maroon);
+        }
+        .option-a .name {
+            color: var(--warm-white);
+            font-size: 2.5rem;
+        }
+        .option-a .role {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        /* Option B: Cream background (matches page) */
+        .option-b {
+            background: var(--cream);
+        }
+        .option-b .name {
+            color: var(--text-dark);
+            font-size: 2.5rem;
+        }
+        .option-b .role {
+            color: var(--maroon);
+            font-size: 1rem;
+        }
+
+        /* Option C: Name only, Maroon bg */
+        .option-c {
+            background: var(--maroon);
+        }
+        .option-c .name {
+            color: var(--warm-white);
+            font-size: 3rem;
+        }
+
+        /* Option D: Minimal - Text Dark on Cream, no role */
+        .option-d {
+            background: var(--cream);
+        }
+        .option-d .name {
+            color: var(--maroon);
+            font-size: 3rem;
+        }
+
+        /* ============================
+           NOTES
+           ============================ */
+
+        .notes {
+            max-width: 640px;
+            background: #222;
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .notes strong {
+            color: #fff;
+        }
+
+        .notes ul {
+            margin-top: 0.75rem;
+            padding-left: 1.25rem;
+        }
+
+        .notes li {
+            margin-bottom: 0.5rem;
+        }
+
+        .swatch {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+        .swatch.maroon { background: var(--maroon); }
+        .swatch.gold { background: var(--gold); }
+        .swatch.cream { background: var(--cream); border: 1px solid #999; }
+    </style>
+</head>
+<body>
+
+    <h2>Option A — Maroon + Gold (Header Style)</h2>
+    <div class="card-container">
+        <div class="end-card option-a">
+            <div class="name">Saurin Choksi</div>
+            <div class="role">Technical Designer</div>
+        </div>
+    </div>
+
+    <h2>Option B — Cream Background (Page Style)</h2>
+    <div class="card-container">
+        <div class="end-card option-b">
+            <div class="name">Saurin Choksi</div>
+            <div class="role">Technical Designer</div>
+        </div>
+    </div>
+
+    <h2>Option C — Name Only, Maroon Background</h2>
+    <div class="card-container">
+        <div class="end-card option-c">
+            <div class="name">Saurin Choksi</div>
+        </div>
+    </div>
+
+    <h2>Option D — Name Only, Cream Background</h2>
+    <div class="card-container">
+        <div class="end-card option-d">
+            <div class="name">Saurin Choksi</div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <strong>Production Notes:</strong>
+        <ul>
+            <li>Video dimensions: 1920×1080 (scale up from 640×360 mockup)</li>
+            <li>Hold for 2 seconds before fade to black</li>
+            <li>Fade in from previous frame (0.5s ease)</li>
+            <li><span class="swatch maroon"></span><strong>Maroon:</strong> #6A3843 — primary brand</li>
+            <li><span class="swatch gold"></span><strong>Gold:</strong> #BFA265 — accent</li>
+            <li><span class="swatch cream"></span><strong>Cream:</strong> #FDFCFA — page background</li>
+            <li><strong>Font:</strong> Fraunces 700 for name</li>
+        </ul>
+    </div>
+
+</body>
+</html>

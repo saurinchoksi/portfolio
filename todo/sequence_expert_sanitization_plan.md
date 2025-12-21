@@ -179,6 +179,9 @@ Location: `/Users/choksi/Perforce/choksi_wandalone/sanitized_demo/BOOKS/DINO/KC_
         <media audioId="audio_Silence_10ms" channel="1"/>
     </sequence>
 
+    <sequence id="seq_BlankSequence">
+    </sequence>
+
 </sequences>
 ```
 
@@ -339,18 +342,109 @@ After creating all files, verify the tool loads the sanitized data:
 3. Then: `BOOKS/DINO/KC_Activities/DINO_Story/DINO_Story_MediaSequences.xml`
 4. Assets from: `BOOKS/DINO/KC_Assets/`
 
-You may need to modify the tool's base path or serve from the sanitized_demo folder.
+The tool now supports a configurable base path. See "Code Changes" section below.
 
 ---
 
 ## Summary Checklist
 
-- [ ] Create directory structure under `/sanitized_demo/`
-- [ ] Create `BookManifest.xml` with 10 book codes
-- [ ] Create `DINO_ActivityManifest.xml` with 3 activities
-- [ ] Create `DINO_Story_MediaSequences.xml` with 10 sequences
-- [ ] Create `DINO_Story_AssetManifest.xml` with audio/LED mappings
-- [ ] Create `DINO_Game01_MediaSequences.xml` and `AssetManifest.xml`
-- [ ] Create `DINO_Game02_MediaSequences.xml` and `AssetManifest.xml`
-- [ ] Create 27 placeholder files in `KC_Assets/`
+- [x] Create directory structure under `/sanitized_demo/`
+- [x] Create `BookManifest.xml` with 10 book codes
+- [x] Create `DINO_ActivityManifest.xml` with 3 activities
+- [x] Create `DINO_Story_MediaSequences.xml` with 10 sequences
+- [x] Create `DINO_Story_AssetManifest.xml` with audio/LED mappings
+- [x] Create `DINO_Game01_MediaSequences.xml` and `AssetManifest.xml`
+- [x] Create `DINO_Game02_MediaSequences.xml` and `AssetManifest.xml`
+- [x] Create 27 placeholder files in `KC_Assets/`
+- [x] Add base path configuration to tool
 - [ ] Test tool loads "DINO" from dropdown
+
+---
+
+## Code Changes
+
+The following files were modified to support configurable data paths:
+
+### `web_scripts/sequence_expert/utils.js`
+
+Added at top of file:
+```javascript
+/**
+ * Data source configuration.
+ * Change this to switch between production and demo data.
+ *
+ * Examples:
+ *   ''                  - Production data (root directory)
+ *   'sanitized_demo/'   - Demo data for portfolio screenshots
+ */
+export const DATA_BASE_PATH = 'sanitized_demo/';
+
+export function getDataBasePath() {
+    return DATA_BASE_PATH;
+}
+```
+
+Updated `loadXML()` to prepend base path:
+```javascript
+const fullUrl = url.startsWith('http') || url.startsWith('/') ? url : (DATA_BASE_PATH + url);
+return fetch(fullUrl, { cache: "reload" })
+```
+
+### `web_scripts/sequence_expert/libraryLoader.js`
+
+Updated import:
+```javascript
+import { loadXML, getDataBasePath } from './utils.js';
+```
+
+Updated audio path construction (in `loadMediaAndWaits()`):
+```javascript
+const fullPath = audioFile ? `${getDataBasePath()}${sequence.assetsPath}/${audioFile}` : null;
+```
+
+### Switching Between Data Sources
+
+To switch back to production data, change `DATA_BASE_PATH` in `utils.js`:
+```javascript
+export const DATA_BASE_PATH = '';  // Empty string = production data
+```
+
+---
+
+## Hero Sequence
+
+**`seq_game05_r01_correct`** is designated as the hero sequence for portfolio demos.
+
+This sequence will eventually have real recorded audio to demonstrate the full experience. It includes:
+- Positive feedback SFX
+- Narrator: "That's right!"
+- Wait
+- Narrator: "T-Rex was the king of the dinosaurs!"
+- Dinosaur roar SFX
+
+Location: `DINO_Game05_MediaSequences.xml`
+
+Audio files to record:
+- `DINO_NA_ThatsRight.wv`
+- `DINO_NA_TRexWasTheKing.wv`
+- `SFX_DinoRoar.wv` (or use stock SFX)
+
+---
+
+## Script Document
+
+**Location:** `/sanitized_demo/DINO_Game05_Script.csv`
+
+A dummy Google Sheets-style script for portfolio screenshots. Mirrors the real HDD_Script structure with columns:
+- Spread, Subsection, Type, Character, Line, Animation, Notes, Curriculum, Sequence ID
+
+Content includes:
+- Game intro (2 lines)
+- Round 1: T-Rex (complete round with correct/incorrect/hint/iap)
+- Round 2: Triceratops (prompt, correct, incorrect, hint)
+- 3 hover interactions (T-Rex, Triceratops, Egg)
+- 2 vocabulary words (dinosaur, fossil)
+- Encouragement lines
+- Completion and outro
+
+~32 rows total — enough to look authentic without overwhelming.
