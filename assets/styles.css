@@ -357,6 +357,16 @@ p strong {
     transition: opacity 0.2s ease;
 }
 
+/* Individual logo sizing - each logo needs specific height for visual balance */
+.logo-grid .logo-disney { height: 35px; }
+.logo-grid .logo-netflix { height: 26px; }
+.logo-grid .logo-apple { height: 35px; }
+.logo-grid .logo-pbs { height: 44px; margin-top: 3px; }
+.logo-grid .logo-sesame { height: 47px; }
+.logo-grid .logo-nick { height: 60px; }
+.logo-grid .logo-spin { height: 55px; }
+.logo-grid .logo-mo { height: 55px; }
+
 /* ============================================
    HOME: FEATURED WORK SECTION
    ============================================ */
@@ -1526,12 +1536,22 @@ footer a {
     }
 
     .logo-grid {
-        gap: 1.5rem 2rem;
+        gap: 1.75rem 2rem;
     }
 
     .logo-grid img {
         height: 26px;
     }
+
+    /* Mobile logo sizing - balanced for 2-row layout */
+    .logo-grid .logo-disney { height: 23px; }
+    .logo-grid .logo-netflix { height: 20px; }
+    .logo-grid .logo-apple { height: 23px; }
+    .logo-grid .logo-pbs { height: 26px; margin-top: 2px; }
+    .logo-grid .logo-sesame { height: 28px; }
+    .logo-grid .logo-nick { height: 34px; }
+    .logo-grid .logo-spin { height: 33px; }
+    .logo-grid .logo-mo { height: 33px; }
 
     .project-card .project-stat {
         font-size: 2.25rem;
