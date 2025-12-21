@@ -1,5 +1,0 @@
-exclude:
-  - CLAUDE.md
-  - .gitignore
-  - todo
-  - netlify.toml

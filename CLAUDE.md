@@ -26,29 +26,30 @@ This portfolio implements a **CSS Variable-based design system** defined in `ass
 
 ```
 /
-├── index.html                 # Homepage with hero, logo bar, featured work
-├── about.html                 # About page with header grid layout
-├── contact.html               # Contact page with form
-├── case-studies/
-│   └── sequence-expert.html  # Case study template/example
-├── assets/
-│   ├── styles.css            # Single CSS file with design system (1600+ lines)
-│   ├── images/               # Optimized images and logos
-│   │   ├── choksi-home.webp  # Hero image (191KB, optimized)
-│   │   ├── choksi-about.webp # About page image (267KB, optimized)
-│   │   ├── og-image.jpg      # Open Graph social share image (1200x630)
-│   │   ├── favicon/          # Multi-platform favicon files
-│   │   └── logos/            # Client logo images (optimized to ~48KB total)
-│   └── saurin-choksi-style-guide.md  # Design specifications
-├── netlify.toml              # Netlify config (security headers, caching, redirects)
-├── _headers                  # HSTS header configuration
-├── _redirects                # URL redirects and privacy rules (hide /todo, etc.)
-├── _config.yml               # Jekyll config for GitHub Pages (excludes CLAUDE.md, todo/)
-├── robots.txt                # SEO: Allow all crawlers
-├── sitemap.xml               # SEO: All pages with priority weights
-└── todo/                     # Project planning and specs (excluded from deploy)
-    ├── TODO.md               # Current project status and tasks
-    └── *.md                  # Design specs and planning docs
+├── portfolio/                 # ← Netlify deploys ONLY this folder
+│   ├── index.html             # Homepage with hero, logo bar, featured work
+│   ├── about.html             # About page with header grid layout
+│   ├── contact.html           # Contact page with form
+│   ├── case-studies/
+│   │   └── sequence-expert.html  # Case study template/example
+│   ├── assets/
+│   │   ├── styles.css         # Single CSS file with design system (1600+ lines)
+│   │   ├── images/            # Optimized images and logos
+│   │   │   ├── choksi-home.webp   # Hero image (191KB, optimized)
+│   │   │   ├── choksi-about.webp  # About page image (267KB, optimized)
+│   │   │   ├── og-image.jpg       # Open Graph social share image (1200x630)
+│   │   │   ├── favicon/           # Multi-platform favicon files
+│   │   │   └── logos/             # Client logo images (optimized to ~48KB total)
+│   │   └── saurin-choksi-style-guide.md  # Design specifications
+│   ├── _headers               # HSTS header configuration
+│   ├── _redirects             # URL redirects
+│   ├── robots.txt             # SEO: Allow all crawlers
+│   └── sitemap.xml            # SEO: All pages with priority weights
+├── CLAUDE.md                  # Project instructions (NOT deployed)
+├── todo/                      # Task tracking (NOT deployed)
+│   ├── TODO.md                # Current project status and tasks
+│   └── *.md                   # Design specs and planning docs
+└── netlify.toml               # Netlify config (must stay at root)
 ```
 
 ### Page Patterns
@@ -66,11 +67,11 @@ This is a static site with no build step. All changes are direct HTML/CSS edits.
 
 **Local Development**:
 ```bash
-# Serve locally (Python 3)
-python3 -m http.server 8000
+# Serve the portfolio folder (Python 3)
+python3 -m http.server 8000 -d portfolio
 
 # Or use any static file server
-npx http-server
+npx http-server portfolio
 ```
 
 **Deployment**:
@@ -81,18 +82,23 @@ git commit -m "Update content"
 git push
 ```
 
+### Git Workflow Rules
+
+- **Commits**: You are encouraged to commit changes locally whenever it is logical to do so (e.g., after completing a discrete task or fixing a bug).
+- **Pushing**: **DO NOT PUSH** to GitHub unless explicitly instructed to do so by the user.
+
 ### Deployment & Configuration
 
 **Netlify Configuration (`netlify.toml`)**:
+- **Publish Directory**: `portfolio/` - only this folder is deployed
 - **Security Headers**: CSP, X-Frame-Options, X-Content-Type-Options, XSS Protection, Referrer Policy, Permissions Policy
 - **Caching Strategy**: `max-age=0, must-revalidate` for all assets (HTML, CSS, images) to prevent stale content
 - **Cache Busting**: CSS files use query param versioning (e.g., `styles.css?v=2`) - increment version after CSS changes
 - **URL Redirects**: `/portfolio` → `/case-studies/sequence-expert.html` (301 redirect)
 
-**Additional Configuration Files**:
+**Additional Configuration Files** (inside `portfolio/`):
 - `_headers`: HSTS (Strict-Transport-Security) header for HTTPS enforcement
-- `_redirects`: Privacy rules (404 for `/CLAUDE.md`, `/.gitignore`, `/todo/*`)
-- `_config.yml`: Jekyll excludes for GitHub Pages deployment
+- `_redirects`: URL redirects
 
 **Important**: After CSS changes, increment the version number in all HTML `<link>` tags:
 ```html
@@ -389,7 +395,7 @@ Portfolio focuses on:
 
 ## Reference Files
 
-- `assets/saurin-choksi-style-guide.md` - Complete design specifications including exact font sizes, weights, spacing
+- `portfolio/assets/saurin-choksi-style-guide.md` - Complete design specifications including exact font sizes, weights, spacing
 - `netlify.toml` - Deployment configuration, security headers, caching rules
 - `todo/TODO.md` - Current project status and remaining tasks
 - `todo/*.md` - Design specs and planning documents

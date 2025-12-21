@@ -1,5 +1,8 @@
 # Netlify Configuration File
 
+[build]
+  publish = "portfolio"
+
 [[headers]]
   for = "/*"
   [headers.values]
