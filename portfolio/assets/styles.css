@@ -374,14 +374,38 @@ p strong {
 }
 
 /* Individual logo sizing - each logo needs specific height for visual balance */
-.logo-grid .logo-disney { height: 35px; }
-.logo-grid .logo-netflix { height: 26px; }
-.logo-grid .logo-apple { height: 35px; }
-.logo-grid .logo-pbs { height: 44px; margin-top: 3px; }
-.logo-grid .logo-sesame { height: 47px; }
-.logo-grid .logo-nick { height: 60px; }
-.logo-grid .logo-spin { height: 55px; }
-.logo-grid .logo-mo { height: 55px; }
+.logo-grid .logo-disney {
+    height: 35px;
+}
+
+.logo-grid .logo-netflix {
+    height: 26px;
+}
+
+.logo-grid .logo-apple {
+    height: 35px;
+}
+
+.logo-grid .logo-pbs {
+    height: 44px;
+    margin-top: 3px;
+}
+
+.logo-grid .logo-sesame {
+    height: 47px;
+}
+
+.logo-grid .logo-nick {
+    height: 60px;
+}
+
+.logo-grid .logo-spin {
+    height: 55px;
+}
+
+.logo-grid .logo-mo {
+    height: 55px;
+}
 
 /* ============================================
    HOME: FEATURED WORK SECTION
@@ -673,9 +697,14 @@ p strong {
 }
 
 .section-divider {
-    height: 1px;
-    background: var(--dusty-rose);
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--gold) 15%,
+            var(--gold) 85%,
+            transparent 100%);
     margin: 3rem 0;
+    opacity: 0.6;
 }
 
 /* Solution Section */
@@ -1149,12 +1178,36 @@ p strong {
     margin-top: 0.5rem;
 }
 
-.about-hero-image {
+/* Photo → Felt Crossfade Container */
+.about-image-container {
+    position: relative;
     width: 100%;
     border-radius: 8px;
+    overflow: hidden;
     box-shadow: var(--card-shadow);
     background: var(--dusty-rose);
-    min-height: 300px;
+}
+
+.about-felt-image {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.about-image-container .about-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 1;
+    transition: opacity 4s ease;
+}
+
+.about-image-container:hover .about-hero-image {
+    opacity: 0;
 }
 
 .image-credit {
@@ -1544,14 +1597,38 @@ footer a {
     }
 
     /* Mobile logo sizing - balanced for 2-row layout */
-    .logo-grid .logo-disney { height: 23px; }
-    .logo-grid .logo-netflix { height: 20px; }
-    .logo-grid .logo-apple { height: 23px; }
-    .logo-grid .logo-pbs { height: 26px; margin-top: 2px; }
-    .logo-grid .logo-sesame { height: 28px; }
-    .logo-grid .logo-nick { height: 34px; }
-    .logo-grid .logo-spin { height: 33px; }
-    .logo-grid .logo-mo { height: 33px; }
+    .logo-grid .logo-disney {
+        height: 23px;
+    }
+
+    .logo-grid .logo-netflix {
+        height: 20px;
+    }
+
+    .logo-grid .logo-apple {
+        height: 23px;
+    }
+
+    .logo-grid .logo-pbs {
+        height: 26px;
+        margin-top: 2px;
+    }
+
+    .logo-grid .logo-sesame {
+        height: 28px;
+    }
+
+    .logo-grid .logo-nick {
+        height: 34px;
+    }
+
+    .logo-grid .logo-spin {
+        height: 33px;
+    }
+
+    .logo-grid .logo-mo {
+        height: 33px;
+    }
 
     .project-card .project-stat {
         font-size: 2.25rem;
@@ -1631,3 +1708,20 @@ footer a {
         white-space: nowrap;
     }
 }
+
+/* ============================================
+   TEXTURE: Paper Grain
+   ============================================ */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: .05;
+    pointer-events: none;
+    z-index: -1;
+}
+

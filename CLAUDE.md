@@ -2,9 +2,26 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+---
+
+## Session Protocol
+
+**At session start:** Read `/Users/choksi/dev/reference/SYNC.md` for current state across all projects.
+
+**After completing tasks:** Update SYNC.md:
+- Move completed items to "Recent Completions" with date
+- Update "Status" and "Next" fields on active tasks  
+- Add any blockers or questions that emerged
+- Keep "Session Notes" to 2-3 lines max
+- Update timestamp, change "By" to "Claude Code"
+
+**Reference:** `/Users/choksi/dev/reference/claude-code-bible.md` for commands and context management.
+
+---
+
 ## Project Overview
 
-This is a static HTML/CSS portfolio website for Saurin Choksi, designed for deployment on **Netlify** (with optional GitHub Pages support). The site showcases professional work as a Technical Designer bridging storytelling and engineering.
+This is a static HTML/CSS portfolio website for Saurin Choksi, designed for deployment on **Netlify** (with optional GitHub Pages support). The site showcases professional work as a Creative Technologist bridging storytelling and engineering.
 
 **Live Site**: https://saurinchoksi.com
 **Tech Stack**: Pure HTML/CSS (no build process), Google Fonts (Fraunces + DM Sans)

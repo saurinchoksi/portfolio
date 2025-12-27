@@ -5,7 +5,7 @@
 
 ## Brand Essence
 
-**Positioning:** "Technical Designer / Bridging story + code"
+**Positioning:** "Creative Technologist / Bridging story + code"
 
 **Tagline:** "I build the tools, pipelines, and prototypes for interactive storytelling. Before technical design, I wrote for Mo Willems and earned an Emmy nomination for Daniel Tiger's Neighborhood. With an understanding of story, systems, and audience, I now translate creative vision into engineering reality."
 "
