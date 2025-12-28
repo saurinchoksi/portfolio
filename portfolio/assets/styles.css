@@ -89,11 +89,13 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 a {
     transition: opacity 0.2s ease, color 0.2s ease;
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* Focus Indicators for Keyboard Navigation */
@@ -157,6 +159,7 @@ header .site-title a {
     color: var(--warm-white);
     text-decoration: none;
     transition: opacity 0.2s ease;
+    cursor: pointer;
 }
 
 
@@ -173,6 +176,7 @@ header .nav a {
     transition: color 0.2s ease;
     position: relative;
     padding-bottom: 0.25rem;
+    cursor: pointer;
 }
 
 header .nav a::after {
@@ -184,6 +188,7 @@ header .nav a::after {
     left: 0;
     background-color: var(--gold);
     transition: width 0.3s ease;
+    pointer-events: none;
 }
 
 header .nav a:hover,
@@ -1143,6 +1148,7 @@ p strong {
 .about-main p a {
     color: var(--maroon);
     text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -1301,6 +1307,7 @@ p strong {
     text-decoration: none;
     border-bottom: 2px solid var(--gold);
     transition: border-color 0.2s ease;
+    cursor: pointer;
 }
 
 .about-closing a:hover {
@@ -1342,6 +1349,7 @@ p strong {
     bottom: 10%;
     width: 1px;
     background: var(--border-lighter);
+    pointer-events: none;
 }
 
 .icon-svg {
@@ -1433,12 +1441,14 @@ p strong {
     fill: none;
     stroke-width: 2;
     flex-shrink: 0;
+    pointer-events: none;
 }
 
 .contact-method a {
     color: var(--maroon);
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -1580,6 +1590,7 @@ footer a {
     text-decoration: none;
     font-weight: 600;
     transition: opacity 0.2s ease;
+    cursor: pointer;
 }
 
 
