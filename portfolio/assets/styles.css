@@ -1244,6 +1244,69 @@ p strong {
     line-height: 1.5;
 }
 
+/* Bridge: The pivot moment - breathing room */
+.bridge {
+    margin: 2.5rem 0;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--dusty-rose);
+    border-bottom: 1px solid var(--dusty-rose);
+}
+
+.bridge p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Values Filter: The barometer line */
+.values-filter {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem 1rem;
+}
+
+.values-filter p {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--maroon);
+    line-height: 1.4;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Values list - flows from the filter */
+.values-list {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin: -1rem 0 2.5rem;
+}
+
+/* Simple closing - conversational, not transactional */
+.about-closing {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--dusty-rose);
+}
+
+.about-closing p {
+    color: var(--text-dark);
+}
+
+.about-closing a {
+    color: var(--maroon);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    transition: border-color 0.2s ease;
+}
+
+.about-closing a:hover {
+    border-color: var(--maroon);
+}
+
 /* Highlight Box */
 .highlight-box {
     background: var(--dusty-rose);
