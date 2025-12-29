@@ -1729,7 +1729,6 @@ footer a {
     }
 
     .about-hero-image {
-        max-width: 280px;
         margin: 0 auto;
         display: block;
     }
@@ -1798,4 +1797,3 @@ body::after {
     pointer-events: none;
     z-index: -1;
 }
-
