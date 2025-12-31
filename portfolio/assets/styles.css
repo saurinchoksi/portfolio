@@ -499,8 +499,8 @@ p strong {
     text-decoration: none;
     border-bottom: 1px solid var(--maroon);
     transition: color 0.2s ease, border-color 0.2s ease;
-    display: inline-block;
     margin-top: auto;
+    align-self: flex-start;
 }
 
 .project-card .project-link:hover {
