@@ -433,11 +433,8 @@ p strong {
 /* ============================================
    HOME: FEATURED WORK SECTION
    ============================================ */
-.featured-work {
-    padding: 3rem 0;
-}
 
-.featured-work > .label {
+.featured-work>.label {
     margin-bottom: 1.5rem;
 }
 
@@ -496,21 +493,19 @@ p strong {
     color: var(--text-light);
 }
 
-.project-card .project-btn {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--text-dark);
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
+.project-card .project-link {
+    color: var(--maroon);
+    font-weight: 500;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 0.2s ease;
+    border-bottom: 1px solid var(--maroon);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    display: inline-block;
     margin-top: auto;
 }
 
-.project-card .project-btn:hover {
-    background: var(--gold-dark);
+.project-card .project-link:hover {
+    color: var(--gold-dark);
+    border-color: var(--gold-dark);
 }
 
 /* Project Card Visual Placeholder */
@@ -607,16 +602,13 @@ p strong {
 
 .label {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: var(--maroon);
     margin-bottom: 0.75rem;
-}
-
-.label--gold {
-    color: var(--gold);
+    text-align: center;
 }
 
 .back-link {
