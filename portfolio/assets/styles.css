@@ -307,7 +307,6 @@ p strong {
 
 .home-hero .hero-tagline {
     font-family: 'Fraunces', Georgia, serif;
-    font-style: italic;
     font-weight: 400;
     font-size: var(--font-size-h3);
     color: var(--text-dark);
@@ -1249,22 +1248,6 @@ p strong {
     margin-bottom: 2.5rem;
     line-height: 1.5;
 }
-
-/* Bridge: The pivot moment - breathing room */
-.bridge {
-    margin: 2.5rem 0;
-    padding: 1.75rem 0;
-    border-top: 1px solid var(--dusty-rose);
-    border-bottom: 1px solid var(--dusty-rose);
-}
-
-.bridge p {
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    margin: 0;
-    line-height: 1.7;
-}
-
 /* Values Filter: The barometer line */
 .values-filter {
     text-align: center;
@@ -1642,6 +1625,7 @@ footer a {
 
     .home-hero .hero-tagline {
         font-size: 1.25rem;
+        max-width: 400px;
     }
 
     .home-hero .hero-body {
