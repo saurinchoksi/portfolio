@@ -36,7 +36,7 @@
     <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="assets/styles.css?v=2">
+    <link rel="stylesheet" href="assets/styles.css?v=4">
 </head>
 
 <body class="home">
@@ -47,8 +47,6 @@
         <div class="site-title"><a href="index.html">Saurin Choksi</a></div>
         <nav class="nav">
             <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="case-studies/sequence-expert.html">Portfolio</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
@@ -59,21 +57,25 @@
         </div>
 
         <div class="hero-content">
-            <h1>Creative Technologist</h1>
+            <p class="hero-label">Creative Technologist</p>
 
-            <p class="hero-tagline">Tools and automation for products I'd actually give my kid</p>
+            <p class="hero-hook">When a writer says "the interaction just feels… <span
+                    class="hook-highlight">off</span>," I add a 300ms silent audio file before the punchline. When a
+                computer vision model confuses a T-Rex cartoon with a Stegosaurus, I figure out a new object labeling
+                strategy.</p>
 
-            <p class="hero-body">I build for children's media teams making physical toys, screenless products, and
-                thoughtful digital experiences. I also wrote for Mo Willems and Daniel
-                Tiger's
-                Neighborhood
-                (Emmy nomination).</p>
+            <p class="hero-audience">I wrote for Mo Willems and earned an Emmy
+                nomination for Daniel Tiger's Neighborhood. Now, I build for teams making physical toys, screenless
+                products, and
+                thoughtful digital experiences.</p>
+
 
             <p class="tech-stack">
                 PYTHON<span class="separator">//</span>JAVASCRIPT<span class="separator">//</span>ML<span
                     class="separator">//</span><span class="no-wrap">COMPUTER&nbsp;VISION</span><span
                     class="separator">//</span>AUDIO<span class="separator">//</span>GIT
             </p>
+
         </div>
     </section>
 
@@ -100,11 +102,15 @@
             <h2>Featured Work</h2>
 
             <article class="project-card">
-                <p class="project-stat"><span class="num-before">5&nbsp;steps</span>&nbsp;<span
-                        class="arrow">→</span>&nbsp;<span class="num-after">1</span></p>
-                <h3>Sequence Expert</h3>
-                <p>Audio verification for interactive content teams.</p>
-                <a href="case-studies/sequence-expert.html" class="btn">View Case Study</a>
+                <div class="project-card-content">
+                    <h3>Sequence Expert</h3>
+                    <p class="project-description">A browser-based tool that cut audio verification from a 5-step manual process to a single click. Built with JavaScript and Python/Flask. Adopted by 10+ teammates across 20+ shipped products.</p>
+                    <p class="project-stat"><span class="stat-number">5</span><span class="stat-arrow">→</span><span class="stat-number">1</span> <span class="stat-suffix">steps</span></p>
+                    <a href="case-studies/sequence-expert.html" class="project-link">View case study</a>
+                </div>
+                <div class="project-card-visual">
+                    <span class="placeholder-text">[Demo GIF placeholder]</span>
+                </div>
             </article>
         </section>
 
