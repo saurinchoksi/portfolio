@@ -296,45 +296,63 @@ p strong {
     max-width: 600px;
 }
 
-/* Hero Label - "Creative Technologist" */
+/* Hero Label - "Creative Technologist" (h1) */
 .hero-label {
     font-family: 'Fraunces', Georgia, serif;
-    font-size: 2.2rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: normal;
     color: var(--maroon);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Hero Value Prop - what I do */
+.hero-value-prop {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
 }
 
 /* Hero Hook - the "off" story */
 .hero-hook {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1.2rem;
-    color: var(--text-read);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-}
-
-/* "off" highlight in hook */
-.hook-highlight {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 400;
     font-style: italic;
+    line-height: 1.75;
+    color: var(--text-read);
+    margin-bottom: 0.875rem;
 }
 
-/* Hero Audience - targeting statement */
-.hero-audience {
+/* "off" highlight in hook - reserved for future enhancement */
+.hook-highlight {
+    /* Reserved for future enhancement */
+}
+
+/* Hero Credential - proof of experience */
+.hero-credential {
+    font-family: 'DM Sans', sans-serif;
     font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
     color: var(--text-read);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
+    margin-bottom: 2rem;
 }
 
 /* Tech Stack Bar */
 .tech-stack {
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
+    line-height: 1.4;
     letter-spacing: 0.05em;
     color: var(--text-light);
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 
 .tech-stack .separator {
@@ -1416,9 +1434,39 @@ footer a {
     }
 
     .hero-hook,
-    .hero-audience {
+    .hero-credential {
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-label {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-value-prop {
+        font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-hook {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-credential {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .tech-stack {
+        font-size: 0.7rem;
+    }
+
+    .tech-stack .separator {
+        margin: 0 0.35rem;
     }
 }
 
@@ -1431,16 +1479,6 @@ footer a {
 
     main {
         padding: 2rem 1.25rem;
-    }
-
-    /* Home specific */
-    .hero-hook,
-    .hero-audience {
-        font-size: 1rem;
-    }
-
-    .hero-authority {
-        font-size: 0.8rem;
     }
 
     .tech-stack {
