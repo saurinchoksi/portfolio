@@ -667,8 +667,8 @@ p strong {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     background: var(--maroon);
     border-radius: 50%;
     display: flex;
@@ -708,18 +708,44 @@ p strong {
     -webkit-backdrop-filter: blur(4px);
 }
 
-.old-way-thought--1 { top: 115px; left: 310px; transform: rotate(-2.5deg); }
-.old-way-thought--2 { top: 220px; right: 25px; transform: rotate(2deg); }
-.old-way-thought--3 { bottom: 160px; right: 30px; transform: rotate(-2deg); }
-.old-way-thought--4 { bottom: -20px; left: 290px; transform: rotate(0.5deg); }
-.old-way-thought--5 { bottom: 180px; left: -15px; transform: rotate(-3deg); }
+.old-way-thought--1 {
+    top: 120px;
+    left: 260px;
+    transform: rotate(-2.5deg);
+}
+
+.old-way-thought--2 {
+    top: 255px;
+    right: -10px;
+    transform: rotate(2deg);
+}
+
+.old-way-thought--3 {
+    bottom: 35px;
+    right: 5px;
+    transform: rotate(-2deg);
+    max-width: 155px;
+}
+
+.old-way-thought--4 {
+    bottom: -20px;
+    left: 250px;
+    transform: rotate(0.5deg);
+}
+
+.old-way-thought--5 {
+    bottom: 85px;
+    left: -50px;
+    transform: rotate(-3deg);
+    max-width: 175px;
+}
 
 /* App Node Windows */
 .old-way-node {
     position: absolute;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     z-index: 5;
 }
 
@@ -743,9 +769,18 @@ p strong {
     height: 8px;
     border-radius: 50%;
 }
-.old-way-node__dot--red { background: #ff5f56; }
-.old-way-node__dot--yellow { background: #ffbd2e; }
-.old-way-node__dot--green { background: #27ca3f; }
+
+.old-way-node__dot--red {
+    background: #ff5f56;
+}
+
+.old-way-node__dot--yellow {
+    background: #ffbd2e;
+}
+
+.old-way-node__dot--green {
+    background: #27ca3f;
+}
 
 .old-way-node__title {
     flex: 1;
@@ -777,7 +812,7 @@ p strong {
     justify-content: center;
     font-size: 14px;
     font-weight: 700;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     z-index: 20;
 }
 
@@ -804,8 +839,8 @@ p strong {
 /* Node 2: XML */
 .old-way-node--xml {
     width: 160px;
-    top: 100px;
-    right: 50px;
+    top: 130px;
+    right: 5px;
 }
 
 .old-way-node--xml .old-way-node__content {
@@ -816,9 +851,18 @@ p strong {
     line-height: 1.4;
 }
 
-.old-way-xml-tag { color: #569cd6; }
-.old-way-xml-attr { color: #9cdcfe; }
-.old-way-xml-string { color: #ce9178; }
+.old-way-xml-tag {
+    color: #569cd6;
+}
+
+.old-way-xml-attr {
+    color: #9cdcfe;
+}
+
+.old-way-xml-string {
+    color: #ce9178;
+}
+
 .old-way-xml-id {
     background: #ffc107;
     color: #000;
@@ -829,8 +873,8 @@ p strong {
 /* Node 3: Manifest */
 .old-way-node--manifest {
     width: 155px;
-    bottom: 200px;
-    right: 55px;
+    bottom: 90px;
+    right: 10px;
 }
 
 .old-way-table {
@@ -860,7 +904,7 @@ p strong {
 .old-way-node--finder {
     width: 150px;
     bottom: 30px;
-    left: 50%;
+    left: calc(50% - 30px);
     transform: translateX(-50%);
 }
 
@@ -890,8 +934,8 @@ p strong {
 /* Node 5: DAW */
 .old-way-node--daw {
     width: 155px;
-    bottom: 210px;
-    left: 50px;
+    bottom: 160px;
+    left: -20px;
 }
 
 .old-way-node--daw .old-way-node__content {
@@ -949,7 +993,7 @@ p strong {
     line-height: 1.4;
     color: var(--maroon);
     font-weight: 500;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 20;
 }
@@ -978,7 +1022,9 @@ p strong {
         padding: 1rem;
     }
 
-    .old-way-orbit { display: none; }
+    .old-way-orbit {
+        display: none;
+    }
 
     .old-way-hub {
         position: relative;
@@ -1004,11 +1050,25 @@ p strong {
         max-width: 300px;
     }
 
-    .old-way-node--script { order: 2; }
-    .old-way-node--xml { order: 4; }
-    .old-way-node--manifest { order: 6; }
-    .old-way-node--finder { order: 8; }
-    .old-way-node--daw { order: 10; }
+    .old-way-node--script {
+        order: 2;
+    }
+
+    .old-way-node--xml {
+        order: 4;
+    }
+
+    .old-way-node--manifest {
+        order: 6;
+    }
+
+    .old-way-node--finder {
+        order: 8;
+    }
+
+    .old-way-node--daw {
+        order: 10;
+    }
 
     .old-way-thought {
         position: relative;
@@ -1022,11 +1082,25 @@ p strong {
         margin: -0.5rem 0 0.5rem 0;
     }
 
-    .old-way-thought--1 { order: 3; }
-    .old-way-thought--2 { order: 5; }
-    .old-way-thought--3 { order: 7; }
-    .old-way-thought--4 { order: 9; }
-    .old-way-thought--5 { order: 11; }
+    .old-way-thought--1 {
+        order: 3;
+    }
+
+    .old-way-thought--2 {
+        order: 5;
+    }
+
+    .old-way-thought--3 {
+        order: 7;
+    }
+
+    .old-way-thought--4 {
+        order: 9;
+    }
+
+    .old-way-thought--5 {
+        order: 11;
+    }
 
     .old-way-repeat {
         position: relative;
