@@ -103,7 +103,7 @@
                     I need a better finder than Finder.
                 </div>
                 <div class="old-way-thought old-way-thought--5">
-                    OMG. 4 more files to add, and then set up the pauses between...
+                    OMG. 4 more files to add, and then set up the 200ms pauses between...
                 </div>
 
                 <!-- CENTER HUB -->
@@ -118,12 +118,13 @@
                         <div class="old-way-node__dot old-way-node__dot--red"></div>
                         <div class="old-way-node__dot old-way-node__dot--yellow"></div>
                         <div class="old-way-node__dot old-way-node__dot--green"></div>
-                        <div class="old-way-node__title">Script_Ch3.docx</div>
+                        <div class="old-way-node__title">DINO_Game05_Script.docx</div>
                     </div>
                     <div class="old-way-node__content">
-                        NARRATOR: Welcome back!<br>
-                        [Play <span class="old-way-highlight">greeting_01</span>]<br>
-                        NARRATOR: Today we'll...
+                        [<span class="old-way-highlight">seq_game05_r01_correct</span>]<br>
+                        NARRATOR: Can you find the T-Rex?<br>
+                        NARRATOR: Great job!<br>
+                        SFX: Dino Roar
                     </div>
                 </div>
 
@@ -134,16 +135,24 @@
                         <div class="old-way-node__dot old-way-node__dot--red"></div>
                         <div class="old-way-node__dot old-way-node__dot--yellow"></div>
                         <div class="old-way-node__dot old-way-node__dot--green"></div>
-                        <div class="old-way-node__title">sequences.xml</div>
+                        <div class="old-way-node__title">MediaSequences.xml</div>
                     </div>
                     <div class="old-way-node__content">
                         <span class="old-way-xml-tag">&lt;sequence</span> <span class="old-way-xml-attr">id=</span><span
-                            class="old-way-xml-string">"greeting_01"</span><span class="old-way-xml-tag">&gt;</span><br>
-                        &nbsp;&nbsp;<span class="old-way-xml-tag">&lt;media</span><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="old-way-xml-attr">assetId=</span><span
-                            class="old-way-xml-string">"<span class="old-way-xml-id">VO_CH3_004</span>"</span><br>
-                        &nbsp;&nbsp;<span class="old-way-xml-tag">/&gt;</span><br>
-                        <span class="old-way-xml-tag">&lt;/sequence&gt;</span>
+                            class="old-way-xml-string">"seq_game05_r01_correct"</span><span
+                            class="old-way-xml-tag">&gt;</span><br>
+                        &nbsp;&nbsp;<span class="old-way-xml-tag">&lt;media</span> <span
+                            class="old-way-xml-attr">audioId=</span><span
+                            class="old-way-xml-string">"audio_SFX_PositiveInput"</span><span
+                            class="old-way-xml-tag">/&gt;</span><br>
+                        &nbsp;&nbsp;<span class="old-way-xml-tag">&lt;media</span> <span
+                            class="old-way-xml-attr">audioId=</span><span class="old-way-xml-string">"<span
+                                class="old-way-xml-id">audio_NA_ThatsRight</span>"</span><span
+                            class="old-way-xml-tag">/&gt;</span><br>
+                        &nbsp;&nbsp;<span class="old-way-xml-tag">&lt;wait</span> <span
+                            class="old-way-xml-attr">ms=</span><span class="old-way-xml-string">"200"</span><span
+                            class="old-way-xml-tag">/&gt;</span><br>
+                        &nbsp;&nbsp;<span class="old-way-xml-comment">&lt;!-- 3 more --&gt;</span>
                     </div>
                 </div>
 
@@ -154,7 +163,7 @@
                         <div class="old-way-node__dot old-way-node__dot--red"></div>
                         <div class="old-way-node__dot old-way-node__dot--yellow"></div>
                         <div class="old-way-node__dot old-way-node__dot--green"></div>
-                        <div class="old-way-node__title">asset_manifest.csv</div>
+                        <div class="old-way-node__title">AssetManifest.xml</div>
                     </div>
                     <div class="old-way-node__content">
                         <table class="old-way-table">
@@ -163,16 +172,16 @@
                                 <th>File</th>
                             </tr>
                             <tr>
-                                <td>VO_CH3_003</td>
-                                <td>hello.wav</td>
+                                <td>audio_SFX_PositiveInput</td>
+                                <td>SFX_PositiveInput.wv</td>
                             </tr>
                             <tr class="highlight">
-                                <td>VO_CH3_004</td>
-                                <td>greet_start.wav</td>
+                                <td>audio_NA_ThatsRight</td>
+                                <td>DINO_NA_ThatsRight.wv</td>
                             </tr>
                             <tr>
-                                <td>VO_CH3_005</td>
-                                <td>vocab.wav</td>
+                                <td>audio_NA_TRexWasTheKing</td>
+                                <td>DINO_NA_TRex...King.wv</td>
                             </tr>
                         </table>
                     </div>
@@ -192,19 +201,19 @@
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
                             </svg>
-                            hello.wav
+                            DINO_NA_ThatsGreat.wv
                         </div>
                         <div class="old-way-finder-item highlight">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
                             </svg>
-                            greet_start.wav
+                            DINO_NA_ThatsRight.wv
                         </div>
                         <div class="old-way-finder-item">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
                             </svg>
-                            vocab.wav
+                            DINO_SFX_ThatsWrong.wv
                         </div>
                     </div>
                 </div>
