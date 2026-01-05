@@ -48,16 +48,6 @@
     /* UI Inputs */
     --text-button: #1A1A1A;
 
-    /* Demo UI (dark mockup interface) */
-    --demo-bg: #2a2a2a;
-    --demo-bg-dark: #333;
-    --demo-bg-panel: #444;
-    --demo-text: #aaa;
-    --demo-text-muted: #888;
-    --demo-text-secondary: #999;
-    --demo-accent: #5a7a9a;
-    --demo-waveform: #5a9a7a;
-
     /* Code Syntax Highlighting */
     --code-keyword: #f9d849;
     --code-const: #7ec8e3;
@@ -1212,105 +1202,11 @@ p strong {
     margin-bottom: 1rem;
 }
 
-.demo-gif-placeholder {
-    background: var(--demo-bg);
-    border-radius: 6px;
-    padding: 1rem;
-    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-    font-size: 0.75rem;
-    color: var(--demo-text);
-}
-
-.demo-gif-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--demo-bg-panel);
-}
-
-.demo-gif-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.demo-gif-dot--red {
-    background: #ff5f56;
-}
-
-.demo-gif-dot--yellow {
-    background: #ffbd2e;
-}
-
-.demo-gif-dot--green {
-    background: #27ca40;
-}
-
-.demo-gif-title {
-    color: var(--demo-text-muted);
-    font-size: 0.7rem;
-    margin-left: 0.5rem;
-}
-
-.demo-gif-content {
-    display: flex;
-    gap: 1rem;
-}
-
-.demo-gif-sidebar {
-    width: 120px;
-    background: var(--demo-bg-dark);
-    border-radius: 3px;
-    padding: 0.5rem;
-}
-
-.demo-gif-item {
-    background: var(--demo-bg-panel);
-    border-radius: 2px;
-    padding: 0.35rem 0.5rem;
-    margin-bottom: 0.35rem;
-    font-size: 0.65rem;
-    color: var(--demo-text-secondary);
-}
-
-.demo-gif-item--selected {
-    background: var(--demo-accent);
-    color: var(--pure-white);
-}
-
-.demo-gif-main {
-    flex: 1;
-    background: var(--demo-bg-dark);
-    border-radius: 3px;
-    padding: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.demo-gif-waveform {
-    height: 40px;
-    background: linear-gradient(90deg,
-            transparent 0%, var(--demo-waveform) 10%, var(--demo-waveform) 15%,
-            transparent 20%, var(--demo-waveform) 25%, var(--demo-waveform) 35%,
-            transparent 40%, var(--demo-waveform) 50%, transparent 60%,
-            var(--demo-waveform) 70%, var(--demo-waveform) 80%, transparent 85%,
-            var(--demo-waveform) 90%, transparent 100%);
-    border-radius: 2px;
-    opacity: 0.7;
-}
-
-.demo-gif-button {
-    align-self: flex-start;
-    background: var(--demo-accent);
-    color: var(--text-button);
-    border: none;
-    border-radius: 3px;
-    padding: 0.35rem 0.75rem;
-    font-size: 0.7rem;
-    font-weight: 600;
+.demo-screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(106, 56, 67, 0.1);
 }
 
 .demo-caption {
