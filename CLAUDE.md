@@ -109,18 +109,12 @@ git push
 **Netlify Configuration (`netlify.toml`)**:
 - **Publish Directory**: `portfolio/` - only this folder is deployed
 - **Security Headers**: CSP, X-Frame-Options, X-Content-Type-Options, XSS Protection, Referrer Policy, Permissions Policy
-- **Caching Strategy**: `max-age=0, must-revalidate` for all assets (HTML, CSS, images) to prevent stale content
-- **Cache Busting**: CSS files use query param versioning (e.g., `styles.css?v=2`) - increment version after CSS changes
+- **Caching Strategy**: `max-age=0, must-revalidate` for all assets (HTML, CSS, images) — Netlify handles cache invalidation via ETags on deploy
 - **URL Redirects**: `/portfolio` → `/case-studies/sequence-expert.html` (301 redirect)
 
 **Additional Configuration Files** (inside `portfolio/`):
 - `_headers`: HSTS (Strict-Transport-Security) header for HTTPS enforcement
 - `_redirects`: URL redirects
-
-**Important**: After CSS changes, increment the version number in all HTML `<link>` tags:
-```html
-<link rel="stylesheet" href="assets/styles.css?v=3">  <!-- Increment v=2 → v=3 -->
-```
 
 ### SEO & Metadata
 
@@ -182,7 +176,6 @@ Examples:
 - fix(mobile): prevent text orphans in tech stack
 - feat(case-study): add new project to portfolio
 - chore(deps): update Google Fonts
-- fix(ops): force cache bust with version query param
 - docs: update CLAUDE.md with deployment info
 ```
 
@@ -338,7 +331,6 @@ All images have been optimized for web performance:
 
 - **No JavaScript**: Pure HTML/CSS site loads instantly
 - **Google Fonts**: Preconnect to fonts.googleapis.com and fonts.gstatic.com
-- **Cache busting**: Version CSS files (?v=N) when making changes
 - **Minimal HTTP requests**: Single CSS file, optimized images
 - **Lazy loading**: Consider adding `loading="lazy"` to below-fold images
 
@@ -372,9 +364,9 @@ Portfolio focuses on:
 
 **Problem**: CSS changes don't appear after pushing to Netlify
 **Solution**:
-1. Increment version number in all HTML files: `styles.css?v=2` → `styles.css?v=3`
-2. Clear browser cache or test in incognito mode
-3. Check Netlify deploy log to confirm CSS file was updated
+1. Clear browser cache or test in incognito mode
+2. Check Netlify deploy log to confirm CSS file was updated
+3. Netlify's `must-revalidate` headers + ETag invalidation should handle cache automatically
 
 ### Adding a New Case Study
 
@@ -384,7 +376,6 @@ Portfolio focuses on:
 - [ ] Optimize and add images to `assets/images/`
 - [ ] Add project card to `index.html` Featured Work section
 - [ ] Add URL to `sitemap.xml` (priority: 0.9)
-- [ ] Increment CSS version if styles changed
 - [ ] Test on mobile (especially iPhone Safari)
 - [ ] Commit with message: `feat(case-study): add [project name]`
 
