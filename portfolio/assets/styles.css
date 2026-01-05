@@ -453,6 +453,8 @@ p strong {
     gap: 2rem;
     max-width: 800px;
     margin: 0 auto;
+    align-items: center;
+    box-shadow: var(--card-shadow);
 }
 
 .project-card-content {
@@ -485,12 +487,14 @@ p strong {
 }
 
 .project-stat .stat-number {
-    color: var(--text-dark);
+    font-size: 1.75rem;
+    color: var(--maroon);
 }
 
 .project-stat .stat-arrow {
     color: var(--text-light);
     margin: 0 0.1rem;
+    vertical-align: 0.2em;
 }
 
 .project-stat .stat-suffix {
@@ -504,7 +508,6 @@ p strong {
     text-decoration: none;
     border-bottom: 1px solid var(--maroon);
     transition: color 0.2s ease, border-color 0.2s ease;
-    margin-top: auto;
     align-self: flex-start;
 }
 
@@ -515,17 +518,15 @@ p strong {
 
 /* Project Card Visual Placeholder */
 .project-card-visual {
-    background: var(--cream);
     border-radius: 4px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
-.project-card-visual .placeholder-text {
-    color: var(--text-light);
-    font-size: 0.85rem;
+.project-card-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(106, 56, 67, 0.1);
 }
 
 /* ============================================
@@ -1975,7 +1976,6 @@ footer a {
 
     .project-card-visual {
         order: -1;
-        height: 160px;
     }
 
     .project-card h3 {
