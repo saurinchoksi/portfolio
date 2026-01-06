@@ -318,11 +318,6 @@ p strong {
     margin-bottom: 0.875rem;
 }
 
-/* "off" highlight in hook - reserved for future enhancement */
-.hook-highlight {
-    /* Reserved for future enhancement */
-}
-
 /* Hero Credential - proof of experience */
 .hero-credential {
     font-family: 'DM Sans', sans-serif;
@@ -477,14 +472,12 @@ p strong {
 }
 
 .project-stat .stat-number {
-    font-size: 1.75rem;
+    font-size: 1rem;
     color: var(--maroon);
 }
 
 .project-stat .stat-arrow {
-    color: var(--text-light);
-    margin: 0 0.1rem;
-    vertical-align: 0.2em;
+    color: var(--gold);
 }
 
 .project-stat .stat-suffix {
