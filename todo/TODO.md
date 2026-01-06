@@ -22,11 +22,11 @@ The following items need manual attention (added Dec 2025 after technical audit)
 
 Replace the static mockup in `case-studies/sequence-expert.html` (lines 175-198) with a working demo.
 
-### Phase 1: Video Recording (Quick Win)
-- [ ] Record 10-15 second screen capture of actual Sequence Expert tool
-- [ ] Show: dropdown cascade → Play All → audio plays
-- [ ] Export as MP4/WebM, keep under 2MB
-- [ ] Embed with `<video controls muted>` and "Click to play with audio" prompt
+### Phase 1: Video Recording (Quick Win) ✅
+- [x] Record 10-15 second screen capture of actual Sequence Expert tool
+- [x] Show: dropdown cascade → Play All → audio plays
+- [x] Export as MP4, 1.5MB (under 2MB target)
+- [x] Embed with video controls, poster image, and "🔊 Sound on" HTML overlay badge
 
 ### Phase 2: Interactive Demo (Future)
 - [ ] Build embedded interactive demo with sample data
