@@ -1209,6 +1209,41 @@ p strong {
     box-shadow: 0 2px 12px rgba(106, 56, 67, 0.1);
 }
 
+/* Demo Video with Sound Badge Overlay */
+.demo-video-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.demo-video {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(106, 56, 67, 0.1);
+    display: block;
+}
+
+.demo-sound-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.demo-sound-badge.hidden {
+    display: none;
+}
+
 .demo-caption {
     text-align: center;
     font-size: 0.85rem;

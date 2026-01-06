@@ -286,11 +286,19 @@
 
             <div class="demo-card">
                 <div class="label">In Action</div>
-                <img src="../assets/images/sequence-expert-demo.webp"
-                     alt="Sequence Expert interface showing cascading dropdowns for audio file lookup"
-                     width="800" height="511"
-                     class="demo-screenshot">
-                <p class="demo-caption">Select a sequence, hit play, hear it immediately.</p>
+                <div class="demo-video-wrapper">
+                    <video
+                        src="../assets/images/sequence-expert-demo.mp4"
+                        poster="../assets/images/sequence-expert-demo.webp"
+                        width="800" height="511"
+                        controls
+                        preload="metadata"
+                        class="demo-video">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="demo-sound-badge">🔊 Sound on</div>
+                </div>
+                <p class="demo-caption">Select a sequence, hit play, hear it immediately — chime, narration, sound effect, all in order.</p>
             </div>
         </section>
 
@@ -464,6 +472,13 @@
       "description": "How I reduced audio verification from 5 steps to 1 click for Kibeam's content team.",
       "keywords": "technical design, audio processing, Python, Flask, JavaScript, web audio"
     }
+    </script>
+
+    <script>
+        // Hide sound badge when video starts playing
+        document.querySelector('.demo-video').addEventListener('play', function() {
+            document.querySelector('.demo-sound-badge').classList.add('hidden');
+        });
     </script>
 
 </body>
