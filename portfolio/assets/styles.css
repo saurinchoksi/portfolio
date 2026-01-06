@@ -1140,6 +1140,22 @@ p strong {
     font-weight: 600;
 }
 
+/* Closing Reflection */
+.closing-reflection {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border-radius: 8px;
+    color: var(--text-read);
+    line-height: 1.7;
+}
+
+.closing-reflection .label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--maroon);
+}
+
 .section-divider {
     height: 2px;
     background: linear-gradient(90deg,
