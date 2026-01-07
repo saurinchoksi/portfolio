@@ -1156,6 +1156,50 @@ p strong {
     color: var(--maroon);
 }
 
+/* Ticket Sections (CV Debugging Case Study) */
+.ticket-section {
+    margin: 2rem 0;
+}
+
+.ticket-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.ticket-label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+}
+
+.story-beat {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--maroon);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.image-placeholder {
+    background: var(--warm-white);
+    border: 2px dashed var(--dusty-rose);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.image-placeholder p {
+    margin: 0;
+}
+
 .section-divider {
     height: 2px;
     background: linear-gradient(90deg,

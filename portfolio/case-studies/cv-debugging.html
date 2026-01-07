@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Pipeline Debugging | Saurin Choksi</title>
+    <meta name="description"
+        content="Three inference issues, three different fixes. How I diagnosed and resolved computer vision failures in a screenless interactive product.">
+    <meta name="author" content="Saurin Choksi">
+    <link rel="canonical" href="https://saurinchoksi.com/case-studies/cv-debugging.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://saurinchoksi.com/case-studies/cv-debugging.html">
+    <meta property="og:title" content="CV Pipeline Debugging: When the Model Can't Be Fixed">
+    <meta property="og:description"
+        content="Three inference issues, three different fixes. Diagnosing computer vision failures in a screenless interactive product.">
+    <meta property="og:image" content="https://saurinchoksi.com/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://saurinchoksi.com/case-studies/cv-debugging.html">
+    <meta property="twitter:title" content="CV Pipeline Debugging: When the Model Can't Be Fixed">
+    <meta property="twitter:description"
+        content="Three inference issues, three different fixes. Diagnosing computer vision failures in a screenless interactive product.">
+    <meta property="twitter:image" content="https://saurinchoksi.com/assets/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="site-title"><a href="../index.html">Saurin Choksi</a></div>
+        <nav class="nav">
+            <a href="../index.html">Home</a>
+            <a href="sequence-expert.html" class="active">Work</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <section class="hero case-study-hero">
+            <div class="hero-stat">
+                3 tickets <span class="arrow">→</span> 3 fixes
+            </div>
+            <h1>When the Model Can't Be Fixed</h1>
+            <p class="hero-subtitle">Protecting play in a computer vision pipeline.</p>
+            <p class="meta">
+                <span class="meta-item"><strong>Role:</strong> Technical Designer</span>
+                <span class="meta-divider">&nbsp;&nbsp;</span>
+                <span class="meta-item"><strong>Stack:</strong> Computer Vision, XML, Python</span>
+            </p>
+        </section>
+
+        <a href="../index.html" class="back-link">← Back to Home</a>
+
+        <p>A child points a wand at a picture book. A dinosaur roars. Magic.</p>
+
+        <p>That magic runs on computer vision. At Kibeam Learning, I worked on screenless interactive audio experiences
+            where ML models detect words and objects in physical books, triggering narration, sound effects, games, and
+            gesture-based interactions with a handheld wand.</p>
+
+        <!-- TODO: Visual of Kibeam Wand + Computer Vision + Physical Book + Responses -->
+        <div class="image-placeholder">
+            <p>[Visual: Kibeam Wand + Computer Vision + Physical Book + Responses]</p>
+        </div>
+
+        <p>When inference works, it's invisible. When it breaks, a child (and their parent!) loses trust in the
+            experience. They pointed at something. Nothing happened. Or worse, the wrong thing happened, and the story
+            betrayed them.</p>
+
+        <p>My job was to make sure that didn't happen.</p>
+
+        <p>I operated at the seam between Creative and Engineering. I translated scripts into the XML and audio
+            sequences that run on the wand, and diagnosed failures when the system didn't behave as designed. Some fixes
+            took minutes. Others took weeks and required me to learn when to stop chasing technical solutions and
+            protect the experience through design instead.</p>
+
+        <!-- TODO: Visual of How Do Dinosaurs Learn to Read Book Cover -->
+        <div class="image-placeholder">
+            <p>[Visual: How Do Dinosaurs Learn to Read? Book Cover]</p>
+        </div>
+
+        <p>This case study walks through three inference issues from a single book: <em>How Do Dinosaurs Learn to
+                Read?</em> Each required a different solution. Together, they show how I diagnose problems across the
+            full stack, and when I learned to pivot.</p>
+
+        <div class="section-divider"></div>
+
+        <section class="ticket-section">
+            <h2><span class="ticket-label">Ticket #DINO-80</span> Know Where to Look</h2>
+
+            <p>A child points at the tiny book clutched in the dinosaur's claws on the title page. They expect a roar.
+                They get silence.</p>
+
+            <!-- TODO: Visual of title page with r.book circled and a note saying will not infer -->
+            <div class="image-placeholder">
+                <p>[Visual: Title page with r.book circled, note: "will not infer"]</p>
+            </div>
+
+            <p>QA flagged an inference issue. The model wasn't detecting the r.book target. Earlier in my time at
+                Kibeam, my first instinct would have been to dive into the logs and verify whether the computer vision
+                model could see the object at all. But experience taught me to check the script first.</p>
+
+            <!-- TODO: Screenshot of missing entry for r.book in script -->
+            <div class="image-placeholder">
+                <p>[Screenshot: Missing entry for r.book in script]</p>
+            </div>
+
+            <p>Sure enough, the entry for r.book was missing a hover component, the instruction that tells the system
+                what to do when the model detects a target. The model was seeing just fine. The system just didn't know
+                how to respond.</p>
+
+            <p>I added the component, created a new build, tested locally, and...</p>
+
+            <p class="story-beat">"ROAAAAAAR."</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="ticket-section">
+            <h2><span class="ticket-label">Ticket #DINO-84</span> Acceptable Trade-offs</h2>
+
+            <p>A child is exploring page 21, pointing at words, hearing them read aloud. Suddenly, without warning, the
+                wand thinks they're on page 18. The child did nothing wrong. The book just stopped making sense.</p>
+
+            <p>QA flagged "ejections" occurring when pointing at the text on page 21. I narrowed the problem area to
+                surrounding the phrase "She reads," which appears on pages 21 and 18. The model couldn't tell those
+                spots apart.</p>
+
+            <!-- TODO: Screenshot of labeled words and a note saying ejects to page 18! -->
+            <div class="image-placeholder">
+                <p>[Screenshot: Labeled words with note "ejects to page 18!"]</p>
+            </div>
+
+            <p>I started with the least invasive fix, adjusting the FOV (field of view). This parameter controls how
+                much of the page the model sees. More context should help it distinguish between pages. I bumped up the
+                value in small increments. No improvement. At FOV 37, I started seeing false triggers elsewhere. Ugh,
+                new problems in exchange for no solution.</p>
+
+            <p>Next tool: relabeling and retraining. I added specific labels to each text region and retrained the
+                model. This approach had worked on a different book. But on this one, it didn't. The model still ejected
+                the user from page 21 to 18.</p>
+
+            <p>I escalated to our ML engineer. He suggested trying a different training recipe. Still no fix.</p>
+
+            <p>At this point, I'd exhausted technical options that would give us a "perfect" fix. So I shifted to
+                negotiation.</p>
+
+            <p>I proposed an exclusion rule to our producer. This meant that when the user is on page 21, the system
+                ignores page 18's text targets entirely. No more ejections, but there's a trade-off. Users can't
+                navigate directly from page 21 to page 18 by pointing at page 18's text. However, they could point at
+                any other element on the page.</p>
+
+            <p>We agreed that a minor navigation constraint was better than a disorienting failure. I'd tried everything
+                else first. That made it easy to say yes.</p>
+
+            <p class="story-beat">The fix shipped.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="ticket-section">
+            <h2><span class="ticket-label">Ticket #DINO-101</span> The Wall</h2>
+
+            <p>Holding the wand, a child's hand drifts juuust off the edge of page 21. By design, nothing should happen.
+                Instead, the wand launches into a mini-game. "Hey, what's going on?!" the kid exclaims. Suddenly,
+                they're somewhere else, smack in the middle of an interaction that they didn't ask for.</p>
+
+            <p>That's not magic! That's betrayal.</p>
+
+            <!-- TODO: Screenshot of area off book circled and note saying launched dino_head game! -->
+            <div class="image-placeholder">
+                <p>[Screenshot: Area off-book circled, note: "launched dino_head game!"]</p>
+            </div>
+
+            <p>QA filed a tricky inference ticket days before our ship date. Pointing off-book near the bottom of page
+                21 triggered the model to detect the dinosaur head on page 20... way on the opposite side of the book. I
+                ran through my complete diagnostic toolkit: FOV adjustments, confidence thresholds, relabeling, and
+                retraining. Nada. Nothing worked.</p>
+
+            <p>I escalated to our ML engineer. He attempted additional training, came back, and shook his head,
+                "Unfortunately, it behaves about the same."</p>
+
+            <p>Our model was supremely confident, but supremely wrong.</p>
+
+            <p>With our deadline approaching, I brought the problem to my Creative Director. He offered a reframe I
+                hadn't considered: "What if we move the game trigger off the dino head completely? Assign it to the book
+                in the dino's claws instead. Then we put a short squawk sound effect on the dino head."</p>
+
+            <!-- TODO: Screenshot of rearrangement of responses -->
+            <div class="image-placeholder">
+                <p>[Screenshot: Rearrangement of responses]</p>
+            </div>
+
+            <p>I immediately clocked the elegance. If the model misfires and detects the dino head when a child points
+                off-book, they hear a goofy "squawk." Unexpected, but harmless versus a catastrophic two-minute game
+                they didn't ask for.</p>
+
+            <p>Confirming we'd launched numerous games off the dinos' books throughout the title, I built the change
+                that afternoon. Tested it. Smiled.</p>
+
+            <p class="story-beat">We shipped, and the book went live on time. Still a model failure. But now, graceful.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <blockquote class="testimonial">
+            <p>"When I filed computer vision tickets, Choksi would come back with a full breakdown of what he'd tried
+                before proposing a workaround. I always knew he'd exhausted all options, and he communicated every
+                adjustment throughout the process."</p>
+            <cite>— Alyssa, QA Engineer</cite>
+        </blockquote>
+
+    </main>
+
+    <footer>
+        © 2026 <a href="../index.html">Saurin Choksi</a>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "When the Model Can't Be Fixed: Protecting Play in a Computer Vision Pipeline",
+      "author": {
+        "@type": "Person",
+        "name": "Saurin Choksi"
+      },
+      "datePublished": "2026-01-07",
+      "description": "Three inference issues, three different fixes. How I diagnosed and resolved computer vision failures in a screenless interactive product.",
+      "keywords": "computer vision, machine learning, debugging, technical design, screenless products"
+    }
+    </script>
+
+</body>
+
+</html>
