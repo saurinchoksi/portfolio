@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="../assets/images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg" />
@@ -91,9 +91,21 @@
             <p>A child points at the tiny book clutched in the dinosaur's claws on the title page. They expect a roar.
                 They get silence.</p>
 
-            <!-- TODO: Visual of title page with r.book circled and a note saying will not infer -->
-            <div class="image-placeholder">
-                <p>[Visual: Title page with r.book circled, note: "will not infer"]</p>
+            <div class="annotated-image annotated-image--portrait">
+                <img src="../assets/images/cv-debugging/title-page-cropped.jpg"
+                    alt="Title page of How Do Dinosaurs Learn to Read showing an ankylosaur holding a small blue book"
+                    width="600" height="794">
+                <svg class="annotation-scribble" style="top: 42%; left: 59%; width: 100px; height: 100px;"
+                    viewBox="0 0 100 100">
+                    <!-- Multiple overlapping strokes for hand-drawn feel -->
+                    <ellipse cx="50" cy="50" rx="42" ry="38" fill="none" stroke="#b91c1c" stroke-width="2.5"
+                        stroke-linecap="round" transform="rotate(-5 50 50)" opacity="0.9" />
+                    <ellipse cx="52" cy="48" rx="40" ry="40" fill="none" stroke="#b91c1c" stroke-width="2"
+                        stroke-linecap="round" transform="rotate(3 52 48)" opacity="0.7" />
+                    <ellipse cx="48" cy="52" rx="44" ry="37" fill="none" stroke="#b91c1c" stroke-width="2"
+                        stroke-linecap="round" transform="rotate(-2 48 52)" opacity="0.6" />
+                </svg>
+                <div class="annotation-label" style="top: 34%; left: 68%;">Dino's book won't infer!</div>
             </div>
 
             <p>QA flagged an inference issue. The model wasn't detecting the r.book target. Earlier in my time at
@@ -126,9 +138,19 @@
                 surrounding the phrase "She reads," which appears on pages 21 and 18. The model couldn't tell those
                 spots apart.</p>
 
-            <!-- TODO: Screenshot of labeled words and a note saying ejects to page 18! -->
-            <div class="image-placeholder">
-                <p>[Screenshot: Labeled words with note "ejects to page 18!"]</p>
+            <div class="annotated-image">
+                <img src="../assets/images/cv-debugging/spread-020.jpg"
+                    alt="Pages 20-21 of How Do Dinosaurs Learn to Read showing a pterodactyl reading, with 'She reads' text visible"
+                    width="1200" height="794">
+                <svg class="annotation-scribble" style="top: 11%; left: 67%; width: 110px; height: 35px;"
+                    viewBox="0 0 110 35">
+                    <!-- Hand-drawn box around "She reads" text (top of page 21) -->
+                    <rect x="3" y="3" width="104" height="29" fill="none" stroke="#b91c1c" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round" transform="rotate(-1 55 17)" />
+                    <rect x="6" y="6" width="100" height="25" fill="none" stroke="#b91c1c" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" opacity="0.5" transform="rotate(1 55 17)" />
+                </svg>
+                <div class="annotation-label" style="top: 7%; left: 27%;">Ejecting to page 18.</div>
             </div>
 
             <p>I started with the least invasive fix, adjusting the FOV (field of view). This parameter controls how
@@ -167,9 +189,37 @@
 
             <p>That's not magic! That's betrayal.</p>
 
-            <!-- TODO: Screenshot of area off book circled and note saying launched dino_head game! -->
-            <div class="image-placeholder">
-                <p>[Screenshot: Area off-book circled, note: "launched dino_head game!"]</p>
+            <div class="annotated-image">
+                <img src="../assets/images/cv-debugging/spread-020.jpg"
+                    alt="Pages 20-21 spread showing pterodactyl head on left page and the off-book trigger zone on right"
+                    width="1200" height="794">
+                <!-- Circle on pterodactyl head (upper left, page 20) -->
+                <svg class="annotation-scribble" style="top: 26%; left: 11%; width: 180px; height: 180px;"
+                    viewBox="0 0 180 180">
+                    <ellipse cx="90" cy="90" rx="80" ry="75" fill="none" stroke="#b91c1c" stroke-width="3.5"
+                        stroke-linecap="round" transform="rotate(-5 90 90)" opacity="0.9" />
+                    <ellipse cx="92" cy="88" rx="77" ry="78" fill="none" stroke="#b91c1c" stroke-width="2.5"
+                        stroke-linecap="round" transform="rotate(3 92 88)" opacity="0.6" />
+                </svg>
+                <!-- Off-book zone indicator (bottom right corner, outside page 21) -->
+                <svg class="annotation-scribble" style="top: 70%; left: 103%; width: 90px; height: 90px;"
+                    viewBox="0 0 90 90">
+                    <ellipse cx="45" cy="45" rx="40" ry="38" fill="none" stroke="#b91c1c" stroke-width="3"
+                        stroke-linecap="round" stroke-dasharray="10,8" transform="rotate(-3 45 45)" />
+                </svg>
+                <!-- Arrow from off-book zone to dino head -->
+                <svg class="annotation-scribble" style="top: 0; left: 0; width: 100%; height: 100%; transform: none;"
+                    viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M 95 65 C 70 55, 40 40, 18 28" fill="none" stroke="#b91c1c" stroke-width="0.4"
+                        stroke-linecap="round" stroke-dasharray="1.5,1" />
+                    <!-- Arrowhead pointing to dino head -->
+                    <path d="M 18 28 L 21 26 M 18 28 L 20 31" fill="none" stroke="#b91c1c" stroke-width="0.5"
+                        stroke-linecap="round" />
+                </svg>
+                <div class="annotation-label" style="top: 82%; left: 68%;">pointing slightly off book around <br> here
+                    launches
+                    dino_head
+                    game?!</div>
             </div>
 
             <p>QA filed a tricky inference ticket days before our ship date. Pointing off-book near the bottom of page
@@ -198,7 +248,8 @@
             <p>Confirming we'd launched numerous games off the dinos' books throughout the title, I built the change
                 that afternoon. Tested it. Smiled.</p>
 
-            <p class="story-beat">We shipped, and the book went live on time. Still a model failure. But now, graceful.</p>
+            <p class="story-beat">We shipped, and the book went live on time. Still a model failure. But now, graceful.
+            </p>
         </section>
 
         <div class="section-divider"></div>
