@@ -193,7 +193,7 @@
             <h2><span class="ticket-label">Ticket #DINO-80</span> Know Where to Look</h2>
 
             <p class="scene-setter">Arti points at the tiny book clutched in the dino's claws. She expects another roar.
-                Instead, she gets silence.</p>
+                Instead... silence.</p>
 
             <div class="annotated-image annotated-image--portrait">
                 <img src="../assets/images/cv-debugging/title-page-cropped.jpg"
@@ -307,39 +307,44 @@
                 around "She reads," which appears on both pages. The model couldn't tell those spots apart.</p>
 
             <!-- Side-by-side comparison: "She reads" on both pages -->
-            <div class="text-comparison text-comparison--tight">
-                <div class="text-comparison-item">
-                    <img src="../assets/images/cv-debugging/page-21-crop.jpg"
-                        alt="Page 21: 'She reads out each word' text">
-                    <!-- Sketchy circle around just "She reads" -->
-                    <svg class="annotation-scribble" style="top: 8%; left: 28%; width: 120px; height: 40px;"
-                        viewBox="0 0 120 40">
-                        <ellipse cx="60" cy="20" rx="54" ry="16" fill="none" stroke="#b91c1c" stroke-width="2.5"
-                            stroke-linecap="round" transform="rotate(-2 60 20)" opacity="0.9" />
-                        <ellipse cx="62" cy="18" rx="52" ry="17" fill="none" stroke="#b91c1c" stroke-width="2"
-                            stroke-linecap="round" transform="rotate(2 62 18)" opacity="0.6" />
-                    </svg>
-                    <span class="text-comparison-label">Page 21</span>
-                </div>
+            <div class="system-diagram">
+                <div class="text-comparison text-comparison--tight">
+                    <div class="text-comparison-item">
+                        <img src="../assets/images/cv-debugging/page-21-crop.jpg"
+                            alt="Page 21: 'She reads out each word' text">
+                        <!-- Sketchy circle around just "She reads" -->
+                        <svg class="annotation-scribble" style="top: 8%; left: 28%; width: 120px; height: 40px;"
+                            viewBox="0 0 120 40">
+                            <ellipse cx="60" cy="20" rx="54" ry="16" fill="none" stroke="#b91c1c" stroke-width="2.5"
+                                stroke-linecap="round" transform="rotate(-2 60 20)" opacity="0.9" />
+                            <ellipse cx="62" cy="18" rx="52" ry="17" fill="none" stroke="#b91c1c" stroke-width="2"
+                                stroke-linecap="round" transform="rotate(2 62 18)" opacity="0.6" />
+                        </svg>
+                        <span class="text-comparison-label">Page 21</span>
+                    </div>
 
-                <div class="text-comparison-item">
-                    <img src="../assets/images/cv-debugging/page-18-crop.jpg"
-                        alt="Page 18: 'She reads very carefully' text">
-                    <!-- Sketchy circle around just "She reads" -->
-                    <svg class="annotation-scribble" style="top: 19%; left: 24%; width: 120px; height: 40px;"
-                        viewBox="0 0 120 40">
-                        <ellipse cx="60" cy="20" rx="54" ry="16" fill="none" stroke="#b91c1c" stroke-width="2.5"
-                            stroke-linecap="round" transform="rotate(1 60 20)" opacity="0.9" />
-                        <ellipse cx="58" cy="22" rx="52" ry="15" fill="none" stroke="#b91c1c" stroke-width="2"
-                            stroke-linecap="round" transform="rotate(-1 58 22)" opacity="0.6" />
-                    </svg>
-                    <span class="text-comparison-label">Page 18</span>
-                </div>
+                    <div class="text-comparison-item">
+                        <img src="../assets/images/cv-debugging/page-18-crop.jpg"
+                            alt="Page 18: 'She reads very carefully' text">
+                        <!-- Sketchy circle around just "She reads" -->
+                        <svg class="annotation-scribble" style="top: 19%; left: 24%; width: 120px; height: 40px;"
+                            viewBox="0 0 120 40">
+                            <ellipse cx="60" cy="20" rx="54" ry="16" fill="none" stroke="#b91c1c" stroke-width="2.5"
+                                stroke-linecap="round" transform="rotate(1 60 20)" opacity="0.9" />
+                            <ellipse cx="58" cy="22" rx="52" ry="15" fill="none" stroke="#b91c1c" stroke-width="2"
+                                stroke-linecap="round" transform="rotate(-1 58 22)" opacity="0.6" />
+                        </svg>
+                        <span class="text-comparison-label">Page 18</span>
+                    </div>
 
-                <!-- Overlay annotation -->
-                <div class="annotation-label" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-3deg);">Ejecting! →</div>
+                    <!-- Overlay annotation -->
+                    <div class="annotation-label"
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-3deg);">
+                        Ejecting! →</div>
+                </div>
+                <p class="diagram-caption">"She reads..." appears on both pages and the model couldn't tell them apart.
+                </p>
             </div>
-            <p class="diagram-caption">"She reads..." appears on both pages. The model can't tell them apart.</p>
 
             <p>I started with the least invasive fix, adjusting the FOV (field of view). This parameter controls how
                 much of the page the model sees. More context should help it distinguish between pages. I bumped up the
@@ -371,44 +376,48 @@
         <section class="ticket-section">
             <h2><span class="ticket-label">Ticket #DINO-101</span> The Wall</h2>
 
-            <p class="scene-setter">Holding the wand, Arti's hand drifts juuust off the edge of page 21. By design,
-                nothing should happen.
-                Instead, the wand launches into a mini-game. "Hey, what's going on?!" she exclaims. Suddenly,
-                she's somewhere else, smack in the middle of an interaction that she didn't ask for.</p>
+            <p class="scene-setter">Holding the wand, Arti's hand drifts juuust off the edge of the page. Nothing should
+                happen.
+                Instead, the wand launches into a mini-game.
 
-            <p>That's not magic! That's betrayal.</p>
-
-            <div class="annotated-image">
-                <img src="../assets/images/cv-debugging/spread-020.jpg"
-                    alt="Pages 20-21 spread showing pterodactyl head on left page and the off-book trigger zone on right"
-                    width="1200" height="794">
-                <!-- Circle on pterodactyl head (upper left, page 20) -->
-                <svg class="annotation-scribble" style="top: 26%; left: 11%; width: 180px; height: 180px;"
-                    viewBox="0 0 180 180">
-                    <ellipse cx="90" cy="90" rx="80" ry="75" fill="none" stroke="#b91c1c" stroke-width="3.5"
-                        stroke-linecap="round" transform="rotate(-5 90 90)" opacity="0.9" />
-                    <ellipse cx="92" cy="88" rx="77" ry="78" fill="none" stroke="#b91c1c" stroke-width="2.5"
-                        stroke-linecap="round" transform="rotate(3 92 88)" opacity="0.6" />
-                </svg>
-                <!-- Off-book zone indicator (bottom right corner, outside page 21) -->
-                <svg class="annotation-scribble" style="top: 70%; left: 103%; width: 90px; height: 90px;"
-                    viewBox="0 0 90 90">
-                    <ellipse cx="45" cy="45" rx="40" ry="38" fill="none" stroke="#b91c1c" stroke-width="3"
-                        stroke-linecap="round" stroke-dasharray="10,8" transform="rotate(-3 45 45)" />
-                </svg>
-                <!-- Arrow from off-book zone to dino head -->
-                <svg class="annotation-scribble" style="top: 0; left: 0; width: 100%; height: 100%; transform: none;"
-                    viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M 95 65 C 70 55, 40 40, 18 28" fill="none" stroke="#b91c1c" stroke-width="0.4"
-                        stroke-linecap="round" stroke-dasharray="1.5,1" />
-                    <!-- Arrowhead pointing to dino head -->
-                    <path d="M 18 28 L 21 26 M 18 28 L 20 31" fill="none" stroke="#b91c1c" stroke-width="0.5"
-                        stroke-linecap="round" />
-                </svg>
-                <div class="annotation-label" style="top: 82%; left: 68%;">pointing slightly off book around <br> here
-                    launches
-                    dino_head
-                    game?!</div>
+            <div class="system-diagram">
+                <div class="annotated-image">
+                    <img src="../assets/images/cv-debugging/spread-020.jpg"
+                        alt="Pages 20-21 spread showing pterodactyl head on left page and the off-book trigger zone on right"
+                        width="1200" height="794">
+                    <!-- Circle on pterodactyl head (upper left, page 20) -->
+                    <svg class="annotation-scribble" style="top: 26%; left: 11%; width: 180px; height: 180px;"
+                        viewBox="0 0 180 180">
+                        <ellipse cx="90" cy="90" rx="80" ry="75" fill="none" stroke="#b91c1c" stroke-width="3.5"
+                            stroke-linecap="round" transform="rotate(-5 90 90)" opacity="0.9" />
+                        <ellipse cx="92" cy="88" rx="77" ry="78" fill="none" stroke="#b91c1c" stroke-width="2.5"
+                            stroke-linecap="round" transform="rotate(3 92 88)" opacity="0.6" />
+                    </svg>
+                    <!-- Off-book zone indicator (bottom right corner, outside page 21) -->
+                    <svg class="annotation-scribble" style="top: 70%; left: 103%; width: 90px; height: 90px;"
+                        viewBox="0 0 90 90">
+                        <ellipse cx="45" cy="45" rx="40" ry="38" fill="none" stroke="#b91c1c" stroke-width="3"
+                            stroke-linecap="round" stroke-dasharray="10,8" transform="rotate(-3 45 45)" />
+                    </svg>
+                    <!-- Arrow from off-book zone to dino head -->
+                    <svg class="annotation-scribble"
+                        style="top: 0; left: 0; width: 100%; height: 100%; transform: none;" viewBox="0 0 100 100"
+                        preserveAspectRatio="none">
+                        <path d="M 95 65 C 70 55, 40 40, 18 28" fill="none" stroke="#b91c1c" stroke-width="0.4"
+                            stroke-linecap="round" stroke-dasharray="1.5,1" />
+                        <!-- Arrowhead pointing to dino head -->
+                        <path d="M 18 28 L 21 26 M 18 28 L 20 31" fill="none" stroke="#b91c1c" stroke-width="0.5"
+                            stroke-linecap="round" />
+                    </svg>
+                    <div class="annotation-label" style="top: 82%; left: 68%;">pointing slightly off book around <br>
+                        here
+                        launches
+                        dino_head
+                        game?!</div>
+                </div>
+                <p class="diagram-caption">The model was supremely confident, but supremely wrong. <br>It falsely
+                    detected
+                    an object on the other side of the book.</p>
             </div>
 
             <p>QA filed a tricky inference ticket days before our ship date. Pointing off-book near the bottom of page
@@ -418,8 +427,6 @@
 
             <p>I escalated to our ML engineer. He attempted additional training, came back, and shook his head,
                 "Unfortunately, it behaves about the same."</p>
-
-            <p>Our model was supremely confident, but supremely wrong.</p>
 
             <p>With our deadline approaching, I brought the problem to my Creative Director. He offered a reframe I
                 hadn't considered: "What if we move the game trigger off the dino head completely? Assign it to the book
