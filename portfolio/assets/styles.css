@@ -1185,6 +1185,24 @@ p strong {
     text-align: center;
 }
 
+/* Scene-setter paragraphs - narrative moments in Fraunces */
+.scene-setter {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--text-dark);
+}
+
+/* Inline code references in prose */
+.inline-code {
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-size: 0.9em;
+    background: var(--warm-white);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    color: var(--maroon);
+}
+
 .image-placeholder {
     background: var(--warm-white);
     border: 2px dashed var(--dusty-rose);
@@ -2096,6 +2114,57 @@ footer a {
     font-style: italic;
     margin-top: 1rem;
     margin-bottom: 0;
+}
+
+/* Text Comparison (side-by-side page crops) */
+.text-comparison {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    justify-content: center;
+    position: relative;
+}
+
+.text-comparison--tight {
+    gap: 0.75rem;
+}
+
+.text-comparison-item {
+    flex: 1;
+    max-width: 340px;
+    position: relative;
+}
+
+.text-comparison-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+}
+
+.text-comparison-label {
+    display: block;
+    text-align: center;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+@media (max-width: 600px) {
+    .text-comparison {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-comparison-item {
+        max-width: 100%;
+    }
+
+    .text-comparison--tight {
+        gap: 1.5rem;
+    }
 }
 
 /* Hand-drawn annotation scribble (SVG) */
