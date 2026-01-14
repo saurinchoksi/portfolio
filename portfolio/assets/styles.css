@@ -2075,6 +2075,29 @@ footer a {
     margin-right: auto;
 }
 
+/* System Diagram (CV Case Study) */
+.system-diagram {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border-radius: 8px;
+}
+
+.system-diagram svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.diagram-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
 /* Hand-drawn annotation scribble (SVG) */
 .annotation-scribble {
     position: absolute;
