@@ -58,6 +58,11 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Cache favicons for 30 days (helps Google update favicon)
+[[headers]]
+  for = "/assets/images/favicon/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
 
 # Optional: Redirect /portfolio to case study
 [[redirects]]
