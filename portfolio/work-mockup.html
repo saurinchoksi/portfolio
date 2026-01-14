@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Saurin Choksi — MOCKUP</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <!-- Mockup-specific styles -->
+    <style>
+        /* Mockup indicator banner */
+        .mockup-banner {
+            background: var(--gold);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* Work page header */
+        .work-header {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .work-header .label {
+            margin-bottom: 0;
+        }
+
+        /* Stack cards vertically with gap */
+        .featured-work-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            padding: 0 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* SVG image container - maintains aspect ratio with background */
+        .project-card-visual--svg {
+            background: var(--warm-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .project-card-visual--svg img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+        }
+
+        @media (max-width: 768px) {
+            .work-header {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+
+            .featured-work-list {
+                padding: 0 1rem 3rem;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mockup-banner">MOCKUP — Not live on site</div>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="site-title"><a href="index.html">Saurin Choksi</a></div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="work-mockup.html" class="active">Work</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="work-header">
+            <p class="label">Selected Work</p>
+        </div>
+
+        <div class="featured-work-list">
+
+            <!-- Card 1: Sequence Expert (cloned from homepage) -->
+            <article class="project-card">
+                <div class="project-card-content">
+                    <h3>Sequence Expert</h3>
+                    <p class="project-description">A browser-based tool that cut audio verification from a 5-step manual
+                        process to a single click. Built with JavaScript and Python/Flask. Reduced review times by
+                        5-10X.</p>
+                    <p class="project-stat"><span class="stat-number">5 steps</span> <span class="stat-arrow">→</span>
+                        <span class="stat-number">1</span>
+                    </p>
+                    <a href="case-studies/sequence-expert.html" class="project-link">View case study</a>
+                </div>
+                <div class="project-card-visual">
+                    <a href="case-studies/sequence-expert.html">
+                        <img src="assets/images/sequence-expert-demo.webp"
+                            alt="Sequence Expert interface showing cascading dropdowns for audio file lookup" width="800"
+                            height="511">
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 2: Computer Vision Debugging -->
+            <article class="project-card">
+                <div class="project-card-content">
+                    <h3>Computer Vision Debugging</h3>
+                    <p class="project-description">How debugging a computer vision model became an exercise in creative problem-solving.</p>
+                    <p class="project-stat"><span class="stat-number">3 Tickets</span> <span class="stat-arrow">→</span>
+                        <span class="stat-number">3 Solutions</span>
+                    </p>
+                    <a href="case-studies/cv-debugging.html" class="project-link">View case study</a>
+                </div>
+                <div class="project-card-visual project-card-visual--svg">
+                    <a href="case-studies/cv-debugging.html">
+                        <img src="assets/images/cv-debugging/system-diagram.svg"
+                            alt="CV pipeline diagram: Point, Capture, Infer, Respond">
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 <a href="index.html">Saurin Choksi</a>
+    </footer>
+
+</body>
+
+</html>
