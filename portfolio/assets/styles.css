@@ -359,14 +359,21 @@ p strong {
     margin: 0 0.5rem;
 }
 
+/* Hide mobile break by default */
+.tech-stack .mobile-break {
+    display: none;
+}
+
 /* ============================================
    HOME: LOGO BAR SECTION
    ============================================ */
 .logo-bar {
     background: var(--dusty-rose);
     padding: 2.5rem;
-    margin: 0 calc(-50vw + 50%) 0;
-    width: 100vw;
+    padding-left: calc(50vw - 50% + 2.5rem);
+    padding-right: calc(50vw - 50% + 2.5rem);
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     text-align: center;
 }
 
@@ -1931,15 +1938,30 @@ footer a {
 
     .tech-stack {
         line-height: 1.8;
+        letter-spacing: 0.02em;
+        font-size: 0.7rem;
+        max-width: 100%;
     }
 
     .tech-stack .separator {
-        margin: 0 0.3rem;
+        margin: 0 0.25rem;
+    }
+
+    .tech-stack .mobile-break {
+        display: block;
+    }
+
+    .tech-stack .no-wrap {
+        white-space: nowrap;
     }
 
     .logo-bar {
         padding: 2rem 1.25rem;
-        margin: 2rem calc(-50vw + 50%);
+        margin: 2rem 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     .logo-grid {
@@ -2021,6 +2043,75 @@ footer a {
     .form-group.half {
         width: 100%;
     }
+
+    /* ===== MOBILE AUDIT FIXES (2026-01-15) ===== */
+
+    /* HIGH PRIORITY: Touch Targets */
+    header .nav a {
+        padding: 0.75rem 0.5rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .project-link,
+    .back-link,
+    .error-link {
+        display: inline-block;
+        padding: 0.75rem 0;
+        min-height: 44px;
+    }
+
+    /* MEDIUM PRIORITY: Various fixes */
+    .contact-method a {
+        padding: 10px 0;
+        display: inline-block;
+    }
+
+    .code-block {
+        font-size: 0.85rem;
+    }
+
+    .pipeline-step .desc {
+        font-size: 0.75rem;
+    }
+
+    footer a {
+        padding: 0.5rem;
+        display: inline-block;
+    }
+
+    /* LOW PRIORITY: Form inputs */
+    .form-group input,
+    .form-group textarea {
+        padding: 0.875rem;
+    }
+
+    .submit-btn {
+        padding: 1rem 2rem;
+        min-height: 48px;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+    }
+
+    /* LOW PRIORITY: Typography scaling */
+    .featured-work .label {
+        font-size: 1rem;
+    }
+
+    .work-header .label {
+        font-size: 1.75rem;
+    }
+
+    .testimonial blockquote {
+        font-size: 1.2rem;
+    }
+
+    .case-study-hero .hero-stat {
+        font-size: 2.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2030,6 +2121,13 @@ footer a {
 
     .project-card .project-stat {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    /* 404 page - reduce large text on extra small screens */
+    .error-code {
+        font-size: 4.5rem;
     }
 }
 
@@ -2304,4 +2402,22 @@ footer a {
 /* Temporarily hidden until resume PDF is ready */
 .resume-download {
     display: none;
+}
+
+/* ============================================
+   MOBILE OVERFLOW FIXES
+   Must come AFTER base definitions to override
+   ============================================ */
+@media (max-width: 600px) {
+    /* Fix annotation labels extending beyond container */
+    .annotation-label {
+        white-space: normal;
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+
+    /* Prevent annotated images from causing horizontal scroll */
+    .annotated-image {
+        overflow-x: hidden;
+    }
 }
