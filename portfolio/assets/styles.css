@@ -2121,6 +2121,14 @@ footer a {
     display: block;
 }
 
+.system-diagram img {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
 .diagram-caption {
     text-align: center;
     font-size: 0.9rem;

@@ -67,10 +67,17 @@
 
         <a href="../index.html" class="back-link">← Back to Home</a>
 
-        <p class="scene-setter">Arti points her wand at a picture of a dinosaur. It roars. She giggles.</p>
+        <p class="scene-setter">Arti points her wand at a picture of a dinosaur. It roars. Magic.</p>
+
+        <div class="system-diagram">
+            <img src="../assets/images/cv-debugging/hero.webp"
+                alt="Child's hand holding a blue interactive wand with glowing LEDs, pointing at the How Do Dinosaurs Learn to Read book"
+                width="636" height="636">
+            <p class="diagram-caption">Kibeam Learning's wand in action.</p>
+        </div>
 
         <p>At Kibeam Learning, I worked at the seam between Creative and Engineering. Computer Vision (CV) models
-            powered Kibeam's screenless, interactive experiences. When everything works it feels like magic. When it
+            powered Kibeam's screenless, interactive experiences. When everything works, it feels like magic. When it
             breaks... the magic stops.</p>
 
         <!-- System Diagram -->
@@ -182,9 +189,8 @@
             <p class="diagram-caption">Inference can fail for many reasons.</p>
         </div>
 
-        <p>This case study walks through three CV issues during the development of Kibeam's interactive experience for
-            <em>How Do Dinosaurs Learn to Read?</em> Each required a different fix, showing how I diagnose problems, and
-            when I learned to stop chasing technical solutions and instead protect the experience through design.
+        <p>This case study covers three CV issues from <em>How Do Dinosaurs Learn to Read?</em>, each requiring a
+            different level of fix. The third taught me when to stop debugging and start designing around the failure.
         </p>
 
         <div class="section-divider"></div>
@@ -192,11 +198,12 @@
         <section class="ticket-section">
             <h2><span class="ticket-label">Ticket #DINO-80</span> Know Where to Look</h2>
 
-            <p class="scene-setter">Arti points at the tiny book clutched in the dino's claws. She expects another roar.
-                Instead... silence.</p>
+            <p class="scene-setter">Arti points at the tiny book in the dino's claws and waits. Silence.
+
+            </p>
 
             <div class="annotated-image annotated-image--portrait">
-                <img src="../assets/images/cv-debugging/title-page-cropped.jpg"
+                <img src="../assets/images/cv-debugging/title-page-cropped.webp"
                     alt="Title page of How Do Dinosaurs Learn to Read showing an ankylosaur holding a small blue book"
                     width="600" height="794">
                 <svg class="annotation-scribble" style="top: 42%; left: 59%; width: 100px; height: 100px;"
@@ -310,7 +317,7 @@
             <div class="system-diagram">
                 <div class="text-comparison text-comparison--tight">
                     <div class="text-comparison-item">
-                        <img src="../assets/images/cv-debugging/page-21-crop.jpg"
+                        <img src="../assets/images/cv-debugging/page-21-crop.webp"
                             alt="Page 21: 'She reads out each word' text">
                         <!-- Sketchy circle around just "She reads" -->
                         <svg class="annotation-scribble" style="top: 8%; left: 28%; width: 120px; height: 40px;"
@@ -324,7 +331,7 @@
                     </div>
 
                     <div class="text-comparison-item">
-                        <img src="../assets/images/cv-debugging/page-18-crop.jpg"
+                        <img src="../assets/images/cv-debugging/page-18-crop.webp"
                             alt="Page 18: 'She reads very carefully' text">
                         <!-- Sketchy circle around just "She reads" -->
                         <svg class="annotation-scribble" style="top: 19%; left: 24%; width: 120px; height: 40px;"
@@ -378,11 +385,11 @@
 
             <p class="scene-setter">Holding the wand, Arti's hand drifts juuust off the edge of the page. Nothing should
                 happen.
-                Instead, the wand launches into a mini-game.
+                Instead, the wand launches into a mini-game.</p>
 
             <div class="system-diagram">
                 <div class="annotated-image">
-                    <img src="../assets/images/cv-debugging/spread-020.jpg"
+                    <img src="../assets/images/cv-debugging/spread-020.webp"
                         alt="Pages 20-21 spread showing pterodactyl head on left page and the off-book trigger zone on right"
                         width="1200" height="794">
                     <!-- Circle on pterodactyl head (upper left, page 20) -->
@@ -531,7 +538,8 @@
         <div class="section-divider"></div>
 
         <div class="testimonial">
-            <blockquote>"When I filed computer vision tickets, Choksi would come back with a full breakdown of what he'd tried
+            <blockquote>"When I filed computer vision tickets, Choksi would come back with a full breakdown of what he'd
+                tried
                 before proposing a workaround. I always knew he'd exhausted all options, and he communicated every
                 adjustment throughout the process."
             </blockquote>
